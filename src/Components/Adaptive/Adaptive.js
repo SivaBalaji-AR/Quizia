@@ -2,331 +2,332 @@ import React, { useState, useEffect } from 'react';
 import Navigationbar from '../smallcomponents/Navbar';
 import { useLocation } from 'react-router-dom';
 
-const quizQuestions = [
-  // First 10 Questions (Introduction)
+const quizQuestions=[
   {
-    id: 1,
-    question: "What is the capital of Japan?",
-    options: ["Tokyo", "Kyoto", "Osaka", "Nagoya"],
-    correctOption: "Tokyo",
-    genres: ["Geography", "Asia", "Capitals"],
-    tag: "Introduction"
+    "id": 1,
+    "question": "What is the capital of Japan?",
+    "options": ["Kyoto", "Nagoya", "Osaka", "Tokyo"],
+    "correctOption": "Tokyo",
+    "genres": ["Geography", "Asia", "Capitals"],
+    "tag": "Introduction"
   },
   {
-    id: 2,
-    question: "Which element has the atomic number 1?",
-    options: ["Hydrogen", "Helium", "Oxygen", "Carbon"],
-    correctOption: "Hydrogen",
-    genres: ["Chemistry", "Periodic Table", "Basics"],
-    tag: "Introduction"
+    "id": 2,
+    "question": "Which element has the atomic number 1?",
+    "options": ["Helium", "Hydrogen", "Oxygen", "Carbon"],
+    "correctOption": "Hydrogen",
+    "genres": ["Chemistry", "Periodic Table", "Basics"],
+    "tag": "Introduction"
   },
   {
-    id: 3,
-    question: "In which year did World War II end?",
-    options: ["1945", "1940", "1939", "1950"],
-    correctOption: "1945",
-    genres: ["History", "World War II", "20th Century"],
-    tag: "Introduction"
+    "id": 3,
+    "question": "In which year did World War II end?",
+    "options": ["1939", "1940", "1950", "1945"],
+    "correctOption": "1945",
+    "genres": ["History", "World War II", "20th Century"],
+    "tag": "Introduction"
   },
   {
-    id: 4,
-    question: "What is the chemical formula for carbon dioxide?",
-    options: ["CO2", "H2O", "O2", "NaCl"],
-    correctOption: "CO2",
-    genres: ["Chemistry", "Molecules", "Formulas"],
-    tag: "Introduction"
+    "id": 4,
+    "question": "What is the chemical formula for carbon dioxide?",
+    "options": ["CO2", "NaCl", "O2", "H2O"],
+    "correctOption": "CO2",
+    "genres": ["Chemistry", "Molecules", "Formulas"],
+    "tag": "Introduction"
   },
   {
-    id: 5,
-    question: "Which planet is known as the Red Planet?",
-    options: ["Mars", "Jupiter", "Venus", "Saturn"],
-    correctOption: "Mars",
-    genres: ["Astronomy", "Solar System", "Planets"],
-    tag: "Introduction"
+    "id": 5,
+    "question": "Which planet is known as the Red Planet?",
+    "options": ["Venus", "Mars", "Jupiter", "Saturn"],
+    "correctOption": "Mars",
+    "genres": ["Astronomy", "Solar System", "Planets"],
+    "tag": "Introduction"
   },
   {
-    id: 6,
-    question: "Who wrote 'To Kill a Mockingbird'?",
-    options: ["Harper Lee", "J.K. Rowling", "George Orwell", "Mark Twain"],
-    correctOption: "Harper Lee",
-    genres: ["Literature", "Novels", "American Authors"],
-    tag: "Introduction"
+    "id": 6,
+    "question": "Who wrote 'To Kill a Mockingbird'?",
+    "options": ["George Orwell", "Harper Lee", "J.K. Rowling", "Mark Twain"],
+    "correctOption": "Harper Lee",
+    "genres": ["Literature", "Novels", "American Authors"],
+    "tag": "Introduction"
   },
   {
-    id: 7,
-    question: "What is the powerhouse of the cell?",
-    options: ["Mitochondria", "Nucleus", "Ribosome", "Golgi Apparatus"],
-    correctOption: "Mitochondria",
-    genres: ["Biology", "Cell Structure", "Basics"],
-    tag: "Introduction"
+    "id": 7,
+    "question": "What is the powerhouse of the cell?",
+    "options": ["Nucleus", "Golgi Apparatus", "Ribosome", "Mitochondria"],
+    "correctOption": "Mitochondria",
+    "genres": ["Biology", "Cell Structure", "Basics"],
+    "tag": "Introduction"
   },
   {
-    id: 8,
-    question: "Which country hosted the 2016 Summer Olympics?",
-    options: ["Brazil", "China", "Japan", "Germany"],
-    correctOption: "Brazil",
-    genres: ["Sports", "Olympics", "World Events"],
-    tag: "Introduction"
+    "id": 8,
+    "question": "Which country hosted the 2016 Summer Olympics?",
+    "options": ["Japan", "China", "Germany", "Brazil"],
+    "correctOption": "Brazil",
+    "genres": ["Sports", "Olympics", "World Events"],
+    "tag": "Introduction"
   },
   {
-    id: 9,
-    question: "What is the freezing point of water in Celsius?",
-    options: ["0°C", "100°C", "-32°C", "32°F"],
-    correctOption: "0°C",
-    genres: ["Physics", "Temperature", "Basics"],
-    tag: "Introduction"
+    "id": 9,
+    "question": "What is the freezing point of water in Celsius?",
+    "options": ["32°F", "0°C", "100°C", "-32°C"],
+    "correctOption": "0°C",
+    "genres": ["Physics", "Temperature", "Basics"],
+    "tag": "Introduction"
   },
   {
-    id: 10,
-    question: "Who painted the Mona Lisa?",
-    options: ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Claude Monet"],
-    correctOption: "Leonardo da Vinci",
-    genres: ["Art", "Renaissance", "Masterpieces"],
-    tag: "Introduction"
-  },
-  // Next 20 Questions
-  {
-    id: 11,
-    question: "What is the chemical symbol for gold?",
-    options: ["Au", "Ag", "Gd", "Go"],
-    correctOption: "Au",
-    genres: ["Chemistry", "Elements", "Precious Metals"],
+    "id": 10,
+    "question": "Who painted the Mona Lisa?",
+    "options": ["Claude Monet", "Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso"],
+    "correctOption": "Leonardo da Vinci",
+    "genres": ["Art", "Renaissance", "Masterpieces"],
+    "tag": "Introduction"
   },
   {
-    id: 12,
-    question: "Which country is known as the Land of the Rising Sun?",
-    options: ["Japan", "China", "Thailand", "South Korea"],
-    correctOption: "Japan",
-    genres: ["Geography", "Asia", "Countries"],
+    "id": 11,
+    "question": "What is the chemical symbol for gold?",
+    "options": ["Go", "Au", "Gd", "Ag"],
+    "correctOption": "Au",
+    "genres": ["Chemistry", "Elements", "Precious Metals"]
   },
   {
-    id: 13,
-    question: "What is the square root of 144?",
-    options: ["12", "14", "16", "18"],
-    correctOption: "12",
-    genres: ["Mathematics", "Algebra", "Basics"],
+    "id": 12,
+    "question": "Which country is known as the Land of the Rising Sun?",
+    "options": ["Thailand", "China", "Japan", "South Korea"],
+    "correctOption": "Japan",
+    "genres": ["Geography", "Asia", "Countries"]
   },
   {
-    id: 14,
-    question: "Which planet has the most moons?",
-    options: ["Jupiter", "Saturn", "Uranus", "Neptune"],
-    correctOption: "Jupiter",
-    genres: ["Astronomy", "Solar System", "Planets"],
+    "id": 13,
+    "question": "What is the square root of 144?",
+    "options": ["14", "18", "12", "16"],
+    "correctOption": "12",
+    "genres": ["Mathematics", "Algebra", "Basics"]
   },
   {
-    id: 15,
-    question: "Who developed the theory of relativity?",
-    options: ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Nikola Tesla"],
-    correctOption: "Albert Einstein",
-    genres: ["Physics", "Relativity", "Famous Scientists"],
+    "id": 14,
+    "question": "Which planet has the most moons?",
+    "options": ["Saturn", "Jupiter", "Uranus", "Neptune"],
+    "correctOption": "Jupiter",
+    "genres": ["Astronomy", "Solar System", "Planets"]
   },
   {
-    id: 16,
-    question: "What is the largest mammal in the world?",
-    options: ["Blue Whale", "Elephant", "Giraffe", "Rhino"],
-    correctOption: "Blue Whale",
-    genres: ["Biology", "Animals", "Marine Life"],
+    "id": 15,
+    "question": "Who developed the theory of relativity?",
+    "options": ["Isaac Newton", "Nikola Tesla", "Albert Einstein", "Galileo Galilei"],
+    "correctOption": "Albert Einstein",
+    "genres": ["Physics", "Relativity", "Famous Scientists"]
   },
   {
-    id: 17,
-    question: "What is the longest river in the world?",
-    options: ["Nile", "Amazon", "Yangtze", "Mississippi"],
-    correctOption: "Nile",
-    genres: ["Geography", "Rivers", "World"],
+    "id": 16,
+    "question": "What is the largest mammal in the world?",
+    "options": ["Elephant", "Rhino", "Giraffe", "Blue Whale"],
+    "correctOption": "Blue Whale",
+    "genres": ["Biology", "Animals", "Marine Life"]
   },
   {
-    id: 18,
-    question: "Who was the first person to walk on the moon?",
-    options: ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "Michael Collins"],
-    correctOption: "Neil Armstrong",
-    genres: ["Space Exploration", "Astronauts", "1960s"],
+    "id": 17,
+    "question": "What is the longest river in the world?",
+    "options": ["Mississippi", "Amazon", "Yangtze", "Nile"],
+    "correctOption": "Nile",
+    "genres": ["Geography", "Rivers", "World"]
   },
   {
-    id: 19,
-    question: "What is the most abundant gas in Earth's atmosphere?",
-    options: ["Nitrogen", "Oxygen", "Carbon Dioxide", "Hydrogen"],
-    correctOption: "Nitrogen",
-    genres: ["Earth Science", "Atmosphere", "Gases"],
+    "id": 18,
+    "question": "Who was the first person to walk on the moon?",
+    "options": ["Buzz Aldrin", "Michael Collins", "Yuri Gagarin", "Neil Armstrong"],
+    "correctOption": "Neil Armstrong",
+    "genres": ["Space Exploration", "Astronauts", "1960s"]
   },
   {
-    id: 20,
-    question: "Which Shakespeare play features the characters Romeo and Juliet?",
-    options: ["Romeo and Juliet", "Macbeth", "Hamlet", "Othello"],
-    correctOption: "Romeo and Juliet",
-    genres: ["Literature", "Plays", "Shakespeare"],
+    "id": 19,
+    "question": "What is the most abundant gas in Earth's atmosphere?",
+    "options": ["Hydrogen", "Carbon Dioxide", "Oxygen", "Nitrogen"],
+    "correctOption": "Nitrogen",
+    "genres": ["Earth Science", "Atmosphere", "Gases"]
   },
   {
-    id: 21,
-    question: "Which organ is responsible for pumping blood throughout the body?",
-    options: ["Heart", "Lungs", "Kidneys", "Liver"],
-    correctOption: "Heart",
-    genres: ["Biology", "Human Body", "Circulatory System"],
+    "id": 20,
+    "question": "Which Shakespeare play features the characters Romeo and Juliet?",
+    "options": ["Macbeth", "Hamlet", "Romeo and Juliet", "Othello"],
+    "correctOption": "Romeo and Juliet",
+    "genres": ["Literature", "Plays", "Shakespeare"]
   },
   {
-    id: 22,
-    question: "What is the largest desert in the world?",
-    options: ["Sahara", "Arctic", "Gobi", "Kalahari"],
-    correctOption: "Sahara",
-    genres: ["Geography", "Deserts", "Africa"],
+    "id": 21,
+    "question": "Which organ is responsible for pumping blood throughout the body?",
+    "options": ["Kidneys", "Heart", "Liver", "Lungs"],
+    "correctOption": "Heart",
+    "genres": ["Biology", "Human Body", "Circulatory System"]
   },
   {
-    id: 23,
-    question: "Which composer is known for his 'Fifth Symphony'?",
-    options: ["Beethoven", "Mozart", "Bach", "Chopin"],
-    correctOption: "Beethoven",
-    genres: ["Music", "Classical", "Composers"],
+    "id": 22,
+    "question": "What is the largest desert in the world?",
+    "options": ["Arctic", "Sahara", "Kalahari", "Gobi"],
+    "correctOption": "Sahara",
+    "genres": ["Geography", "Deserts", "Africa"]
   },
   {
-    id: 24,
-    question: "What is the primary language spoken in Brazil?",
-    options: ["Portuguese", "Spanish", "English", "French"],
-    correctOption: "Portuguese",
-    genres: ["Languages", "South America", "Culture"],
+    "id": 23,
+    "question": "Which composer is known for his 'Fifth Symphony'?",
+    "options": ["Mozart", "Chopin", "Beethoven", "Bach"],
+    "correctOption": "Beethoven",
+    "genres": ["Music", "Classical", "Composers"]
   },
   {
-    id: 25,
-    question: "What is the capital of Australia?",
-    options: ["Canberra", "Sydney", "Melbourne", "Perth"],
-    correctOption: "Canberra",
-    genres: ["Geography", "Oceania", "Capitals"],
+    "id": 24,
+    "question": "What is the primary language spoken in Brazil?",
+    "options": ["French", "Portuguese", "Spanish", "English"],
+    "correctOption": "Portuguese",
+    "genres": ["Languages", "South America", "Culture"]
   },
   {
-    id: 26,
-    question: "What is the boiling point of water at sea level in Celsius?",
-    options: ["100°C", "0°C", "50°C", "75°C"],
-    correctOption: "100°C",
-    genres: ["Physics", "Temperature", "Basics"],
+    "id": 25,
+    "question": "What is the capital of Australia?",
+    "options": ["Melbourne", "Sydney", "Perth", "Canberra"],
+    "correctOption": "Canberra",
+    "genres": ["Geography", "Oceania", "Capitals"]
   },
   {
-    id: 27,
-    question: "Who was the first president of the United States?",
-    options: ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "John Adams"],
-    correctOption: "George Washington",
-    genres: ["History", "United States", "Presidents"],
+    "id": 26,
+    "question": "What is the boiling point of water at sea level in Celsius?",
+    "options": ["0°C", "75°C", "100°C", "50°C"],
+    "correctOption": "100°C",
+    "genres": ["Physics", "Temperature", "Basics"]
   },
   {
-    id: 28,
-    question: "What is the currency of Japan?",
-    options: ["Yen", "Dollar", "Euro", "Won"],
-    correctOption: "Yen",
-    genres: ["Economics", "Asia", "Currencies"],
+    "id": 27,
+    "question": "Who was the first president of the United States?",
+    "options": ["Abraham Lincoln", "George Washington", "John Adams", "Thomas Jefferson"],
+    "correctOption": "George Washington",
+    "genres": ["History", "United States", "Presidents"]
   },
   {
-    id: 29,
-    question: "Which artist painted the ceiling of the Sistine Chapel?",
-    options: ["Michelangelo", "Leonardo da Vinci", "Raphael", "Donatello"],
-    correctOption: "Michelangelo",
-    genres: ["Art", "Renaissance", "Masterpieces"],
+    "id": 28,
+    "question": "What is the currency of Japan?",
+    "options": ["Won", "Dollar", "Euro", "Yen"],
+    "correctOption": "Yen",
+    "genres": ["Economics", "Asia", "Currencies"]
   },
   {
-    id: 30,
-    question: "What is the most populous country in the world?",
-    options: ["China", "India", "United States", "Indonesia"],
-    correctOption: "China",
-    genres: ["Geography", "Population", "Countries"],
+    "id": 29,
+    "question": "Which artist painted the ceiling of the Sistine Chapel?",
+    "options": ["Leonardo da Vinci", "Michelangelo", "Donatello", "Raphael"],
+    "correctOption": "Michelangelo",
+    "genres": ["Art", "Renaissance", "Masterpieces"]
   },
-];
-// Define your quiz question sets
+  {
+    "id": 30,
+    "question": "What is the most populous country in the world?",
+    "options": ["Indonesia", "China", "United States", "India"],
+    "correctOption": "China",
+    "genres": ["Geography", "Population", "Countries"]
+  }
+]
+
+
 const QQJEE = [
-  { id: 1, question: "What is the chemical symbol for Sodium?", options: ["Na", "S", "Sn", "Si"], correctOption: "Na", genres: ["Chemistry", "Elements", "Basics"], tag: "Introduction" },
-  { id: 2, question: "What is the derivative of sin(x) with respect to x?", options: ["cos(x)", "-cos(x)", "sin(x)", "-sin(x)"], correctOption: "cos(x)", genres: ["Mathematics", "Calculus", "Trigonometry"], tag: "Introduction" },
-  { id: 3, question: "Which law states that the pressure of a gas is inversely proportional to its volume at constant temperature?", options: ["Boyle's Law", "Charles's Law", "Avogadro's Law", "Gay-Lussac's Law"], correctOption: "Boyle's Law", genres: ["Physics", "Thermodynamics", "Gas Laws"], tag: "Introduction" },
-  { id: 4, question: "What is the integral of 2x with respect to x?", options: ["x^2 + C", "2x^2 + C", "x^2", "2x"], correctOption: "x^2 + C", genres: ["Mathematics", "Calculus", "Integration"], tag: "Introduction" },
-  { id: 5, question: "Which element has the atomic number 6?", options: ["Carbon", "Oxygen", "Nitrogen", "Boron"], correctOption: "Carbon", genres: ["Chemistry", "Periodic Table", "Basics"], tag: "Introduction" },
-  { id: 6, question: "What is the unit of electrical resistance?", options: ["Ohm", "Volt", "Ampere", "Watt"], correctOption: "Ohm", genres: ["Physics", "Electricity", "Units"], tag: "Introduction" },
+  { id: 1, question: "What is the chemical symbol for Sodium?", options: ["S", "Na", "Sn", "Si"], correctOption: "Na", genres: ["Chemistry", "Elements", "Basics"], tag: "Introduction" },
+  { id: 2, question: "What is the derivative of sin(x) with respect to x?", options: ["-cos(x)", "cos(x)", "sin(x)", "-sin(x)"], correctOption: "cos(x)", genres: ["Mathematics", "Calculus", "Trigonometry"], tag: "Introduction" },
+  { id: 3, question: "Which law states that the pressure of a gas is inversely proportional to its volume at constant temperature?", options: ["Charles's Law", "Boyle's Law", "Gay-Lussac's Law", "Avogadro's Law"], correctOption: "Boyle's Law", genres: ["Physics", "Thermodynamics", "Gas Laws"], tag: "Introduction" },
+  { id: 4, question: "What is the integral of 2x with respect to x?", options: ["2x^2 + C", "x^2", "x^2 + C", "2x"], correctOption: "x^2 + C", genres: ["Mathematics", "Calculus", "Integration"], tag: "Introduction" },
+  { id: 5, question: "Which element has the atomic number 6?", options: ["Nitrogen", "Oxygen", "Carbon", "Boron"], correctOption: "Carbon", genres: ["Chemistry", "Periodic Table", "Basics"], tag: "Introduction" },
+  { id: 6, question: "What is the unit of electrical resistance?", options: ["Volt", "Watt", "Ohm", "Ampere"], correctOption: "Ohm", genres: ["Physics", "Electricity", "Units"], tag: "Introduction" },
   { id: 7, question: "What is the quadratic formula used to find the roots of a quadratic equation?", options: ["(-b ± √(b² - 4ac)) / 2a", "(-b ± 2ac) / √(b² - 4ac)", "(-b ± √(4ac - b²)) / 2a", "(-2a ± √(b² - 4ac)) / b"], correctOption: "(-b ± √(b² - 4ac)) / 2a", genres: ["Mathematics", "Algebra", "Equations"], tag: "Introduction" },
-  { id: 8, question: "Which planet is known as the Blue Planet?", options: ["Earth", "Neptune", "Uranus", "Mars"], correctOption: "Earth", genres: ["Astronomy", "Solar System", "Planets"], tag: "Introduction" },
-  { id: 9, question: "What is the speed of light in a vacuum?", options: ["3 × 10^8 m/s", "3 × 10^6 m/s", "3 × 10^5 m/s", "3 × 10^4 m/s"], correctOption: "3 × 10^8 m/s", genres: ["Physics", "Electromagnetism", "Constants"], tag: "Introduction" },
-  { id: 10, question: "Who is known as the father of modern chemistry?", options: ["Antoine Lavoisier", "Dmitri Mendeleev", "Robert Boyle", "Marie Curie"], correctOption: "Antoine Lavoisier", genres: ["Chemistry", "History", "Famous Scientists"], tag: "Introduction" },
+  { id: 8, question: "Which physical quantity is measured in Pascals?", options: ["Energy", "Force", "Pressure", "Power"], correctOption: "Pressure", genres: ["Physics", "Mechanics", "Units"],tag: "Introduction"  },
+  { id: 9, question: "What is the speed of light in a vacuum?", options: ["3 × 10^6 m/s", "3 × 10^5 m/s", "3 × 10^8 m/s", "3 × 10^4 m/s"], correctOption: "3 × 10^8 m/s", genres: ["Physics", "Electromagnetism", "Constants"], tag: "Introduction" },
+  { id: 10, question: "Who is known as the father of modern chemistry?", options: ["Antoine Lavoisier", "Dmitri Mendeleev", "Marie Curie", "Robert Boyle"], correctOption: "Antoine Lavoisier", genres: ["Chemistry", "History", "Famous Scientists"], tag: "Introduction" },
   // Next 20 Questions
-  { id: 11, question: "What is the SI unit of temperature?", options: ["Kelvin", "Celsius", "Fahrenheit", "Rankine"], correctOption: "Kelvin", genres: ["Physics", "Thermodynamics", "Units"] },
-  { id: 12, question: "What is the main gas found in the Earth's atmosphere?", options: ["Nitrogen", "Oxygen", "Carbon Dioxide", "Hydrogen"], correctOption: "Nitrogen", genres: ["Earth Science", "Atmosphere", "Gases"] },
-  { id: 13, question: "Which acid is found in the human stomach?", options: ["Hydrochloric Acid", "Sulfuric Acid", "Acetic Acid", "Nitric Acid"], correctOption: "Hydrochloric Acid", genres: ["Biology", "Human Body", "Digestive System"] },
-  { id: 14, question: "What is the derivative of x² with respect to x?", options: ["2x", "x", "x^2", "1"], correctOption: "2x", genres: ["Mathematics", "Calculus", "Differentiation"] },
-  { id: 15, question: "Which scientist developed the general theory of relativity?", options: ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Niels Bohr"], correctOption: "Albert Einstein", genres: ["Physics", "Relativity", "Famous Scientists"] },
-  { id: 16, question: "What is the chemical formula for water?", options: ["H2O", "O2", "CO2", "HO2"], correctOption: "H2O", genres: ["Chemistry", "Molecules", "Basics"] },
-  { id: 17, question: "Which physical quantity is measured in Pascals?", options: ["Pressure", "Force", "Energy", "Power"], correctOption: "Pressure", genres: ["Physics", "Mechanics", "Units"] },
-  { id: 18, question: "What is the atomic number of Oxygen?", options: ["8", "16", "6", "12"], correctOption: "8", genres: ["Chemistry", "Periodic Table", "Basics"] },
-  { id: 19, question: "What is the product of the reaction between an acid and a base?", options: ["Salt and Water", "Water and Carbon Dioxide", "Salt and Hydrogen", "Water and Oxygen"], correctOption: "Salt and Water", genres: ["Chemistry", "Reactions", "Acid-Base"] },
-  { id: 20, question: "Which law of thermodynamics states that energy cannot be created or destroyed?", options: ["First Law of Thermodynamics", "Second Law of Thermodynamics", "Third Law of Thermodynamics", "Zeroth Law of Thermodynamics"], correctOption: "First Law of Thermodynamics", genres: ["Physics", "Thermodynamics", "Laws"] },
-  { id: 21, question: "What is the dimensional formula of Force?", options: ["MLT⁻²", "MLT⁻¹", "ML²T⁻²", "ML⁻¹T⁻²"], correctOption: "MLT⁻²", genres: ["Physics", "Mechanics", "Dimensions"] },
-  { id: 22, question: "What is the logarithm of 1 to any base?", options: ["0", "1", "Undefined", "Infinity"], correctOption: "0", genres: ["Mathematics", "Logarithms", "Basics"] },
-  { id: 23, question: "Which metal is the best conductor of electricity?", options: ["Silver", "Copper", "Gold", "Aluminum"], correctOption: "Silver", genres: ["Physics", "Electricity", "Materials"] },
-  { id: 24, question: "What is the formula for kinetic energy?", options: ["½mv²", "mv", "mv²", "½mv"], correctOption: "½mv²", genres: ["Physics", "Mechanics", "Energy"] },
-  { id: 25, question: "Which of the following is an exothermic process?", options: ["Combustion", "Photosynthesis", "Melting of Ice", "Evaporation"], correctOption: "Combustion", genres: ["Chemistry", "Reactions", "Thermochemistry"] },
-  { id: 26, question: "What is the value of π (Pi) to two decimal places?", options: ["3.14", "3.15", "3.13", "3.12"], correctOption: "3.14", genres: ["Mathematics", "Constants", "Geometry"] },
-  { id: 27, question: "Which gas is used in the preparation of ammonia in the Haber process?", options: ["Nitrogen", "Oxygen", "Carbon Dioxide", "Hydrogen"], correctOption: "Nitrogen", genres: ["Chemistry", "Industrial Processes", "Gases"] },
-  { id: 28, question: "What is the name of the force that opposes the motion of an object through a fluid?", options: ["Drag", "Thrust", "Lift", "Friction"], correctOption: "Drag", genres: ["Physics", "Mechanics", "Forces"] },
-  { id: 29, question: "Which compound is known as the 'universal solvent'?", options: ["Water", "Ethanol", "Acetone", "Benzene"], correctOption: "Water", genres: ["Chemistry", "Molecules", "Solvents"] },
-  { id: 30, question: "Which element has the highest electronegativity?", options: ["Fluorine", "Oxygen", "Chlorine", "Nitrogen"], correctOption: "Fluorine", genres: ["Chemistry", "Periodic Table", "Properties"] },
+  { id: 11, question: "What is the SI unit of temperature?", options: ["Celsius", "Fahrenheit", "Kelvin", "Rankine"], correctOption: "Kelvin", genres: ["Physics", "Thermodynamics", "Units"] },
+  { id: 12, question: "What is the main gas found in the Earth's atmosphere?", options: ["Oxygen", "Hydrogen", "Carbon Dioxide", "Nitrogen"], correctOption: "Nitrogen", genres: ["Earth Science", "Atmosphere", "Gases"] },
+  { id: 13, question: "Which acid is found in the human stomach?", options: ["Nitric Acid", "Sulfuric Acid", "Acetic Acid", "Hydrochloric Acid"], correctOption: "Hydrochloric Acid", genres: ["Biology", "Human Body", "Digestive System"] },
+  { id: 14, question: "What is the derivative of x² with respect to x?", options: ["x", "1", "x^2", "2x"], correctOption: "2x", genres: ["Mathematics", "Calculus", "Differentiation"] },
+  { id: 15, question: "Which scientist developed the general theory of relativity?", options: ["Galileo Galilei", "Isaac Newton", "Albert Einstein", "Niels Bohr"], correctOption: "Albert Einstein", genres: ["Physics", "Relativity", "Famous Scientists"] },
+  { id: 16, question: "What is the chemical formula for water?", options: ["O2", "H2O", "CO2", "HO2"], correctOption: "H2O", genres: ["Chemistry", "Molecules", "Basics"] },
+  { id: 17, question: "Which physical quantity is measured in Pascals?", options: ["Energy", "Force", "Pressure", "Power"], correctOption: "Pressure", genres: ["Physics", "Mechanics", "Units"] },
+  { id: 18, question: "What is the atomic number of Oxygen?", options: ["6", "12", "8", "16"], correctOption: "8", genres: ["Chemistry", "Periodic Table", "Basics"] },
+  { id: 19, question: "What is the product of the reaction between an acid and a base?", options: ["Water and Carbon Dioxide", "Salt and Water", "Water and Oxygen", "Salt and Hydrogen"], correctOption: "Salt and Water", genres: ["Chemistry", "Reactions", "Acid-Base"] },
+  { id: 20, question: "Which law of thermodynamics states that energy cannot be created or destroyed?", options: ["Second Law of Thermodynamics", "Third Law of Thermodynamics", "Zeroth Law of Thermodynamics", "First Law of Thermodynamics"], correctOption: "First Law of Thermodynamics", genres: ["Physics", "Thermodynamics", "Laws"] },
+  { id: 21, question: "What is the dimensional formula of Force?", options: ["MLT⁻²", "ML²T⁻²", "MLT⁻¹", "ML⁻¹T⁻²"], correctOption: "MLT⁻²", genres: ["Physics", "Mechanics", "Dimensions"] },
+  { id: 22, question: "What is the logarithm of 1 to any base?", options: ["1", "0", "Undefined", "Infinity"], correctOption: "0", genres: ["Mathematics", "Logarithms", "Basics"] },
+  { id: 23, question: "Which metal is the best conductor of electricity?", options: ["Copper", "Gold", "Aluminum", "Silver"], correctOption: "Silver", genres: ["Physics", "Electricity", "Materials"] },
+  { id: 24, question: "What is the formula for kinetic energy?", options: ["mv", "½mv²", "mv²", "½mv"], correctOption: "½mv²", genres: ["Physics", "Mechanics", "Energy"] },
+  { id: 25, question: "Which of the following is an exothermic process?", options: ["Melting of Ice", "Combustion", "Photosynthesis", "Evaporation"], correctOption: "Combustion", genres: ["Chemistry", "Reactions", "Thermochemistry"] },
+  { id: 26, question: "What is the value of π (Pi) to two decimal places?", options: ["3.15", "3.13", "3.14", "3.12"], correctOption: "3.14", genres: ["Mathematics", "Constants", "Geometry"] },
+  { id: 27, question: "Which gas is used in the preparation of ammonia in the Haber process?", options: ["Oxygen", "Carbon Dioxide", "Hydrogen", "Nitrogen"], correctOption: "Nitrogen", genres: ["Chemistry", "Industrial Processes", "Gases"] },
+  { id: 28, question: "What is the name of the force that opposes the motion of an object through a fluid?", options: ["Lift", "Thrust", "Drag", "Friction"], correctOption: "Drag", genres: ["Physics", "Mechanics", "Forces"] },
+  { id: 29, question: "Which compound is known as the 'universal solvent'?", options: ["Benzene", "Water", "Acetone", "Ethanol"], correctOption: "Water", genres: ["Chemistry", "Molecules", "Solvents"] },
+  { id: 30, question: "Which element has the highest electronegativity?", options: ["Oxygen", "Chlorine", "Nitrogen", "Fluorine"], correctOption: "Fluorine", genres: ["Chemistry", "Periodic Table", "Properties"] },
 ];
+
 
 const QQNEET = [
-  { id: 1, question: "What is the powerhouse of the cell?", options: ["Mitochondria", "Nucleus", "Ribosome", "Golgi Apparatus"], correctOption: "Mitochondria", genres: ["Biology", "Cell Biology", "Basics"], tag: "Introduction" },
-  { id: 2, question: "What is the chemical formula of glucose?", options: ["C6H12O6", "C5H10O5", "C6H10O5", "C6H14O6"], correctOption: "C6H12O6", genres: ["Chemistry", "Biochemistry", "Molecules"], tag: "Introduction" },
-  { id: 3, question: "Which vitamin is essential for the synthesis of collagen?", options: ["Vitamin C", "Vitamin A", "Vitamin D", "Vitamin E"], correctOption: "Vitamin C", genres: ["Biology", "Nutrition", "Vitamins"], tag: "Introduction" },
-  { id: 4, question: "Which part of the plant is primarily involved in photosynthesis?", options: ["Leaves", "Roots", "Stems", "Flowers"], correctOption: "Leaves", genres: ["Biology", "Plant Biology", "Photosynthesis"], tag: "Introduction" },
-  { id: 5, question: "What is the primary function of the large intestine?", options: ["Absorption of water", "Digestion of proteins", "Production of insulin", "Secretion of bile"], correctOption: "Absorption of water", genres: ["Biology", "Human Anatomy", "Digestive System"], tag: "Introduction" },
-  { id: 6, question: "Which type of bond is formed by the sharing of electrons between atoms?", options: ["Covalent Bond", "Ionic Bond", "Hydrogen Bond", "Metallic Bond"], correctOption: "Covalent Bond", genres: ["Chemistry", "Bonding", "Basics"], tag: "Introduction" },
-  { id: 7, question: "What is the process of converting glucose into energy in cells called?", options: ["Glycolysis", "Krebs Cycle", "Electron Transport Chain", "Photosynthesis"], correctOption: "Glycolysis", genres: ["Biology", "Cell Metabolism", "Energy"], tag: "Introduction" },
-  { id: 8, question: "Which hormone regulates blood sugar levels?", options: ["Insulin", "Adrenaline", "Thyroxine", "Estrogen"], correctOption: "Insulin", genres: ["Biology", "Endocrinology", "Hormones"], tag: "Introduction" },
-  { id: 9, question: "What is the name of the process by which plants lose water through small openings in their leaves?", options: ["Transpiration", "Respiration", "Photosynthesis", "Germination"], correctOption: "Transpiration", genres: ["Biology", "Plant Physiology", "Processes"], tag: "Introduction" },
-  { id: 10, question: "Which organ is responsible for detoxifying harmful substances in the body?", options: ["Liver", "Kidneys", "Lungs", "Heart"], correctOption: "Liver", genres: ["Biology", "Human Anatomy", "Organ Functions"], tag: "Introduction" },
-  // Next 20 Questions
-  { id: 11, question: "What is the primary role of the circulatory system?", options: ["Transport of nutrients and oxygen", "Production of hormones", "Digestion of food", "Protection from pathogens"], correctOption: "Transport of nutrients and oxygen", genres: ["Biology", "Circulatory System", "Human Anatomy"] },
-  { id: 12, question: "Which enzyme breaks down proteins in the stomach?", options: ["Pepsin", "Amylase", "Lipase", "Trypsin"], correctOption: "Pepsin", genres: ["Biology", "Digestive System", "Enzymes"] },
-  { id: 13, question: "What is the primary function of red blood cells?", options: ["Oxygen transport", "Immune response", "Nutrient absorption", "Waste removal"], correctOption: "Oxygen transport", genres: ["Biology", "Human Anatomy", "Blood"] },
-  { id: 14, question: "Which part of the brain is responsible for controlling voluntary movements?", options: ["Cerebrum", "Cerebellum", "Brainstem", "Hypothalamus"], correctOption: "Cerebrum", genres: ["Biology", "Neuroanatomy", "Brain Functions"] },
-  { id: 15, question: "What is the main function of the mitochondria?", options: ["Energy production", "Protein synthesis", "Cell division", "Photosynthesis"], correctOption: "Energy production", genres: ["Biology", "Cell Biology", "Organelles"] },
-  { id: 16, question: "Which process converts light energy into chemical energy in plants?", options: ["Photosynthesis", "Respiration", "Fermentation", "Glycolysis"], correctOption: "Photosynthesis", genres: ["Biology", "Plant Physiology", "Photosynthesis"] },
-  { id: 17, question: "What is the name of the process by which plants convert sunlight into energy?", options: ["Photosynthesis", "Respiration", "Transpiration", "Germination"], correctOption: "Photosynthesis", genres: ["Biology", "Plant Biology", "Processes"] },
-  { id: 18, question: "Which blood group is known as the universal donor?", options: ["O-", "AB+", "A-", "B+"], correctOption: "O-", genres: ["Biology", "Genetics", "Blood Groups"] },
-  { id: 19, question: "What is the function of the ribosomes in a cell?", options: ["Protein synthesis", "Energy production", "Genetic material storage", "Cell division"], correctOption: "Protein synthesis", genres: ["Biology", "Cell Biology", "Organelles"] },
-  { id: 20, question: "Which organelle is known as the 'powerhouse of the cell'?", options: ["Mitochondria", "Nucleus", "Ribosome", "Golgi Apparatus"], correctOption: "Mitochondria", genres: ["Biology", "Cell Biology", "Organelles"] },
-  { id: 21, question: "What is the primary function of the immune system?", options: ["Defense against pathogens", "Digestion of food", "Transport of nutrients", "Regulation of hormones"], correctOption: "Defense against pathogens", genres: ["Biology", "Immunology", "Human Anatomy"] },
-  { id: 22, question: "Which type of cell division is responsible for growth and repair in humans?", options: ["Mitosis", "Meiosis", "Binary Fission", "Budding"], correctOption: "Mitosis", genres: ["Biology", "Cell Biology", "Division"] },
-  { id: 23, question: "What is the role of the large intestine in digestion?", options: ["Absorption of water and electrolytes", "Digestion of proteins", "Secretion of digestive enzymes", "Absorption of nutrients"], correctOption: "Absorption of water and electrolytes", genres: ["Biology", "Digestive System", "Human Anatomy"] },
-  { id: 24, question: "Which organ in the human body is primarily responsible for producing bile?", options: ["Liver", "Gallbladder", "Pancreas", "Small Intestine"], correctOption: "Liver", genres: ["Biology", "Digestive System", "Organ Functions"] },
-  { id: 25, question: "What is the name of the process by which water is lost from plants?", options: ["Transpiration", "Respiration", "Photosynthesis", "Germination"], correctOption: "Transpiration", genres: ["Biology", "Plant Biology", "Processes"] },
-  { id: 26, question: "Which type of RNA carries amino acids to the ribosome during protein synthesis?", options: ["tRNA", "mRNA", "rRNA", "sRNA"], correctOption: "tRNA", genres: ["Biology", "Genetics", "Protein Synthesis"] },
-  { id: 27, question: "What is the name of the enzyme that breaks down starch into sugars?", options: ["Amylase", "Lipase", "Protease", "Pepsin"], correctOption: "Amylase", genres: ["Biology", "Digestive Enzymes", "Biochemistry"] },
-  { id: 28, question: "Which of the following is a function of the kidney?", options: ["Filtration of blood", "Production of insulin", "Digestion of proteins", "Absorption of nutrients"], correctOption: "Filtration of blood", genres: ["Biology", "Human Anatomy", "Renal System"] },
-  { id: 29, question: "What is the role of the endoplasmic reticulum in a cell?", options: ["Protein and lipid synthesis", "Energy production", "DNA replication", "Cell division"], correctOption: "Protein and lipid synthesis", genres: ["Biology", "Cell Biology", "Organelles"] },
-  { id: 30, question: "Which type of cell division produces gametes?", options: ["Meiosis", "Mitosis", "Binary Fission", "Budding"], correctOption: "Meiosis", genres: ["Biology", "Genetics", "Cell Division"] },
+  { id: 1, question: "What is the powerhouse of the cell?", options: ["Golgi Apparatus", "Nucleus", "Ribosome", "Mitochondria"], correctOption: "Mitochondria", genres: ["Biology", "Cell Biology", "Basics"], tag: "Introduction" },
+  { id: 2, question: "What is the chemical formula of glucose?", options: ["C6H12O6", "C6H14O6", "C6H10O5", "C5H10O5"], correctOption: "C6H12O6", genres: ["Chemistry", "Biochemistry", "Molecules"], tag: "Introduction" },
+  { id: 3, question: "Which vitamin is essential for the synthesis of collagen?", options: ["Vitamin E", "Vitamin A", "Vitamin C", "Vitamin D"], correctOption: "Vitamin C", genres: ["Biology", "Nutrition", "Vitamins"], tag: "Introduction" },
+  { id: 4, question: "Which part of the plant is primarily involved in photosynthesis?", options: ["Flowers", "Stems", "Leaves", "Roots"], correctOption: "Leaves", genres: ["Biology", "Plant Biology", "Photosynthesis"], tag: "Introduction" },
+  { id: 5, question: "What is the primary function of the large intestine?", options: ["Secretion of bile", "Production of insulin", "Absorption of water", "Digestion of proteins"], correctOption: "Absorption of water", genres: ["Biology", "Human Anatomy", "Digestive System"], tag: "Introduction" },
+  { id: 6, question: "Which type of bond is formed by the sharing of electrons between atoms?", options: ["Metallic Bond", "Ionic Bond", "Hydrogen Bond", "Covalent Bond"], correctOption: "Covalent Bond", genres: ["Chemistry", "Bonding", "Basics"], tag: "Introduction" },
+  { id: 7, question: "What is the process of converting glucose into energy in cells called?", options: ["Photosynthesis", "Electron Transport Chain", "Glycolysis", "Krebs Cycle"], correctOption: "Glycolysis", genres: ["Biology", "Cell Metabolism", "Energy"], tag: "Introduction" },
+  { id: 8, question: "Which hormone regulates blood sugar levels?", options: ["Insulin", "Estrogen", "Thyroxine", "Adrenaline"], correctOption: "Insulin", genres: ["Biology", "Endocrinology", "Hormones"], tag: "Introduction" },
+  { id: 9, question: "What is the name of the process by which plants lose water through small openings in their leaves?", options: ["Germination", "Photosynthesis", "Respiration", "Transpiration"], correctOption: "Transpiration", genres: ["Biology", "Plant Physiology", "Processes"], tag: "Introduction" },
+  { id: 10, question: "Which organ is responsible for detoxifying harmful substances in the body?", options: ["Kidneys", "Heart", "Liver", "Lungs"], correctOption: "Liver", genres: ["Biology", "Human Anatomy", "Organ Functions"], tag: "Introduction" },
+  { id: 11, question: "What is the primary role of the circulatory system?", options: ["Transport of nutrients and oxygen", "Protection from pathogens", "Production of hormones", "Digestion of food"], correctOption: "Transport of nutrients and oxygen", genres: ["Biology", "Circulatory System", "Human Anatomy"] },
+  { id: 12, question: "Which enzyme breaks down proteins in the stomach?", options: ["Amylase", "Lipase", "Pepsin", "Trypsin"], correctOption: "Pepsin", genres: ["Biology", "Digestive System", "Enzymes"] },
+  { id: 13, question: "What is the primary function of red blood cells?", options: ["Waste removal", "Oxygen transport", "Immune response", "Nutrient absorption"], correctOption: "Oxygen transport", genres: ["Biology", "Human Anatomy", "Blood"] },
+  { id: 14, question: "Which part of the brain is responsible for controlling voluntary movements?", options: ["Hypothalamus", "Cerebellum", "Brainstem", "Cerebrum"], correctOption: "Cerebrum", genres: ["Biology", "Neuroanatomy", "Brain Functions"] },
+  { id: 15, question: "What is the main function of the mitochondria?", options: ["Cell division", "Energy production", "Photosynthesis", "Protein synthesis"], correctOption: "Energy production", genres: ["Biology", "Cell Biology", "Organelles"] },
+  { id: 16, question: "Which process converts light energy into chemical energy in plants?", options: ["Respiration", "Fermentation", "Glycolysis", "Photosynthesis"], correctOption: "Photosynthesis", genres: ["Biology", "Plant Physiology", "Photosynthesis"] },
+  { id: 17, question: "What is the name of the process by which plants convert sunlight into energy?", options: ["Germination", "Photosynthesis", "Transpiration", "Respiration"], correctOption: "Photosynthesis", genres: ["Biology", "Plant Biology", "Processes"] },
+  { id: 18, question: "Which blood group is known as the universal donor?", options: ["O-", "A-", "AB+", "B+"], correctOption: "O-", genres: ["Biology", "Genetics", "Blood Groups"] },
+  { id: 19, question: "What is the function of the ribosomes in a cell?", options: ["Genetic material storage", "Energy production", "Cell division", "Protein synthesis"], correctOption: "Protein synthesis", genres: ["Biology", "Cell Biology", "Organelles"] },
+  { id: 20, question: "Which organelle is known as the 'powerhouse of the cell'?", options: ["Mitochondria", "Golgi Apparatus", "Nucleus", "Ribosome"], correctOption: "Mitochondria", genres: ["Biology", "Cell Biology", "Organelles"] },
+  { id: 21, question: "What is the primary function of the immune system?", options: ["Defense against pathogens", "Regulation of hormones", "Transport of nutrients", "Digestion of food"], correctOption: "Defense against pathogens", genres: ["Biology", "Immunology", "Human Anatomy"] },
+  { id: 22, question: "Which type of cell division is responsible for growth and repair in humans?", options: ["Binary Fission", "Budding", "Meiosis", "Mitosis"], correctOption: "Mitosis", genres: ["Biology", "Cell Biology", "Division"] },
+  { id: 23, question: "What is the role of the large intestine in digestion?", options: ["Absorption of nutrients", "Secretion of digestive enzymes", "Digestion of proteins", "Absorption of water and electrolytes"], correctOption: "Absorption of water and electrolytes", genres: ["Biology", "Digestive System", "Human Anatomy"] },
+  { id: 24, question: "Which organ in the human body is primarily responsible for producing bile?", options: ["Gallbladder", "Small Intestine", "Pancreas", "Liver"], correctOption: "Liver", genres: ["Biology", "Digestive System", "Organ Functions"] },
+  { id: 25, question: "What is the name of the process by which water is lost from plants?", options: ["Respiration", "Transpiration", "Photosynthesis", "Germination"], correctOption: "Transpiration", genres: ["Biology", "Plant Biology", "Processes"] },
+  { id: 26, question: "Which type of RNA carries amino acids to the ribosome during protein synthesis?", options: ["mRNA", "sRNA", "rRNA", "tRNA"], correctOption: "tRNA", genres: ["Biology", "Genetics", "Protein Synthesis"] },
+  { id: 27, question: "What is the name of the enzyme that breaks down starch into sugars?", options: ["Lipase", "Protease", "Amylase", "Pepsin"], correctOption: "Amylase", genres: ["Biology", "Digestive Enzymes", "Biochemistry"] },
+  { id: 28, question: "Which of the following is a function of the kidney?", options: ["Production of insulin", "Filtration of blood", "Digestion of proteins", "Absorption of nutrients"], correctOption: "Filtration of blood", genres: ["Biology", "Human Anatomy", "Renal System"] },
+  { id: 29, question: "What is the role of the endoplasmic reticulum in a cell?", options: ["DNA replication", "Protein and lipid synthesis", "Energy production", "Cell division"], correctOption: "Protein and lipid synthesis", genres: ["Biology", "Cell Biology", "Organelles"] },
+  { id: 30, question: "Which type of cell division produces gametes?", options: ["Budding", "Binary Fission", "Meiosis", "Mitosis"], correctOption: "Meiosis", genres: ["Biology", "Genetics", "Cell Division"] }
 ];
 
+
+
 const QQGATE = [
-  { id: 1, question: "What is the fundamental unit of a computer's memory?", options: ["Byte", "Bit", "Word", "Nibble"], correctOption: "Bit", genres: ["Computer Science", "Memory", "Basics"], tag: "Introduction" },
-  { id: 2, question: "In which algorithm is a node expanded only when it is chosen as the best possible node to expand?", options: ["A* Algorithm", "Breadth-First Search", "Depth-First Search", "Dijkstra's Algorithm"], correctOption: "A* Algorithm", genres: ["Algorithms", "Search Algorithms", "Computer Science"], tag: "Introduction" },
-  { id: 3, question: "Which data structure uses LIFO (Last In, First Out) principle?", options: ["Stack", "Queue", "Linked List", "Tree"], correctOption: "Stack", genres: ["Data Structures", "Computer Science", "Basics"], tag: "Introduction" },
-  { id: 4, question: "What is the worst-case time complexity of QuickSort algorithm?", options: ["O(n log n)", "O(n^2)", "O(n)", "O(log n)"], correctOption: "O(n^2)", genres: ["Algorithms", "Sorting Algorithms", "Computer Science"], tag: "Introduction" },
-  { id: 5, question: "Which of the following is a non-volatile memory?", options: ["RAM", "Cache", "ROM", "Register"], correctOption: "ROM", genres: ["Computer Science", "Memory", "Basics"], tag: "Introduction" },
-  { id: 6, question: "What is the main purpose of normalization in databases?", options: ["Reduce redundancy", "Improve speed", "Increase security", "Facilitate indexing"], correctOption: "Reduce redundancy", genres: ["Databases", "Normalization", "Computer Science"], tag: "Introduction" },
-  { id: 7, question: "In which layer of the OSI model does the IP protocol operate?", options: ["Network Layer", "Transport Layer", "Data Link Layer", "Application Layer"], correctOption: "Network Layer", genres: ["Networking", "OSI Model", "Computer Science"], tag: "Introduction" },
-  { id: 8, question: "Which of the following is a heuristic search algorithm?", options: ["A* Algorithm", "Breadth-First Search", "Depth-First Search", "Dijkstra's Algorithm"], correctOption: "A* Algorithm", genres: ["Algorithms", "Search Algorithms", "Computer Science"], tag: "Introduction" },
-  { id: 9, question: "What does CPU stand for?", options: ["Central Processing Unit", "Computer Processing Unit", "Central Program Unit", "Computing Power Unit"], correctOption: "Central Processing Unit", genres: ["Computer Science", "Basics", "Hardware"], tag: "Introduction" },
-  { id: 10, question: "What is the purpose of a compiler in programming?", options: ["Translate high-level code to machine code", "Execute code line by line", "Debug code", "Manage memory"], correctOption: "Translate high-level code to machine code", genres: ["Programming", "Compiler Design", "Computer Science"], tag: "Introduction" },
+  { id: 1, question: "What is the fundamental unit of a computer's memory?", options: ["Byte", "Nibble", "Bit", "Word"], correctOption: "Bit", genres: ["Computer Science", "Memory", "Basics"], tag: "Introduction" },
+  { id: 2, question: "In which algorithm is a node expanded only when it is chosen as the best possible node to expand?", options: ["Dijkstra's Algorithm", "Breadth-First Search", "A* Algorithm", "Depth-First Search"], correctOption: "A* Algorithm", genres: ["Algorithms", "Search Algorithms", "Computer Science"], tag: "Introduction" },
+  { id: 3, question: "Which data structure uses LIFO (Last In, First Out) principle?", options: ["Queue", "Stack", "Linked List", "Tree"], correctOption: "Stack", genres: ["Data Structures", "Computer Science", "Basics"], tag: "Introduction" },
+  { id: 4, question: "What is the worst-case time complexity of QuickSort algorithm?", options: ["O(n)", "O(log n)", "O(n^2)", "O(n log n)"], correctOption: "O(n^2)", genres: ["Algorithms", "Sorting Algorithms", "Computer Science"], tag: "Introduction" },
+  { id: 5, question: "Which of the following is a non-volatile memory?", options: ["Cache", "Register", "ROM", "RAM"], correctOption: "ROM", genres: ["Computer Science", "Memory", "Basics"], tag: "Introduction" },
+  { id: 6, question: "What is the main purpose of normalization in databases?", options: ["Increase security", "Reduce redundancy", "Improve speed", "Facilitate indexing"], correctOption: "Reduce redundancy", genres: ["Databases", "Normalization", "Computer Science"], tag: "Introduction" },
+  { id: 7, question: "In which layer of the OSI model does the IP protocol operate?", options: ["Network Layer", "Application Layer", "Transport Layer", "Data Link Layer"], correctOption: "Network Layer", genres: ["Networking", "OSI Model", "Computer Science"], tag: "Introduction" },
+  { id: 8, question: "Which of the following is a heuristic search algorithm?", options: ["A* Algorithm", "Depth-First Search", "Dijkstra's Algorithm", "Breadth-First Search"], correctOption: "A* Algorithm", genres: ["Algorithms", "Search Algorithms", "Computer Science"], tag: "Introduction" },
+  { id: 9, question: "What does CPU stand for?", options: ["Central Program Unit", "Computer Processing Unit", "Computing Power Unit", "Central Processing Unit"], correctOption: "Central Processing Unit", genres: ["Computer Science", "Basics", "Hardware"], tag: "Introduction" },
+  { id: 10, question: "What is the purpose of a compiler in programming?", options: ["Debug code", "Translate high-level code to machine code", "Execute code line by line", "Manage memory"], correctOption: "Translate high-level code to machine code", genres: ["Programming", "Compiler Design", "Computer Science"], tag: "Introduction" },
   // Next 20 Questions
-  { id: 11, question: "What is the primary function of an Operating System?", options: ["Manage hardware resources", "Execute applications", "Store data", "Control network operations"], correctOption: "Manage hardware resources", genres: ["Operating Systems", "Computer Science", "Basics"] },
-  { id: 12, question: "Which sorting algorithm is based on the divide and conquer approach?", options: ["Merge Sort", "Bubble Sort", "Insertion Sort", "Selection Sort"], correctOption: "Merge Sort", genres: ["Algorithms", "Sorting Algorithms", "Computer Science"] },
-  { id: 13, question: "What is the time complexity of Binary Search algorithm?", options: ["O(log n)", "O(n)", "O(n log n)", "O(n^2)"], correctOption: "O(log n)", genres: ["Algorithms", "Search Algorithms", "Computer Science"] },
-  { id: 14, question: "Which protocol is used to securely transmit data over a network?", options: ["HTTPS", "HTTP", "FTP", "SMTP"], correctOption: "HTTPS", genres: ["Networking", "Security", "Computer Science"] },
+  { id: 11, question: "What is the primary function of an Operating System?", options: ["Execute applications", "Control network operations", "Manage hardware resources", "Store data"], correctOption: "Manage hardware resources", genres: ["Operating Systems", "Computer Science", "Basics"] },
+  { id: 12, question: "Which sorting algorithm is based on the divide and conquer approach?", options: ["Bubble Sort", "Selection Sort", "Merge Sort", "Insertion Sort"], correctOption: "Merge Sort", genres: ["Algorithms", "Sorting Algorithms", "Computer Science"] },
+  { id: 13, question: "What is the time complexity of Binary Search algorithm?", options: ["O(n)", "O(n log n)", "O(n^2)", "O(log n)"], correctOption: "O(log n)", genres: ["Algorithms", "Search Algorithms", "Computer Science"] },
+  { id: 14, question: "Which protocol is used to securely transmit data over a network?", options: ["SMTP", "HTTPS", "HTTP", "FTP"], correctOption: "HTTPS", genres: ["Networking", "Security", "Computer Science"] },
   { id: 15, question: "What is the primary purpose of an index in a database?", options: ["Speed up query performance", "Store data", "Maintain data integrity", "Manage transactions"], correctOption: "Speed up query performance", genres: ["Databases", "Indexing", "Computer Science"] },
-  { id: 16, question: "Which of the following is an example of a NoSQL database?", options: ["MongoDB", "MySQL", "PostgreSQL", "SQLite"], correctOption: "MongoDB", genres: ["Databases", "NoSQL", "Computer Science"] },
-  { id: 17, question: "What is the main advantage of using a linked list over an array?", options: ["Dynamic size", "Constant-time access", "Better cache performance", "Simple implementation"], correctOption: "Dynamic size", genres: ["Data Structures", "Linked Lists", "Computer Science"] },
-  { id: 18, question: "Which algorithm is commonly used for finding the shortest path in a graph?", options: ["Dijkstra's Algorithm", "Kruskal's Algorithm", "Prim's Algorithm", "A* Algorithm"], correctOption: "Dijkstra's Algorithm", genres: ["Algorithms", "Graph Algorithms", "Computer Science"] },
-  { id: 19, question: "What is the primary function of an interrupt in a computer system?", options: ["Signal the CPU to stop current tasks", "Increase processing speed", "Manage memory", "Control input/output operations"], correctOption: "Signal the CPU to stop current tasks", genres: ["Computer Architecture", "Interrupts", "Computer Science"] },
-  { id: 20, question: "Which of the following is an example of a dynamic programming problem?", options: ["Knapsack Problem", "Sorting Problem", "Graph Traversal", "Binary Search"], correctOption: "Knapsack Problem", genres: ["Algorithms", "Dynamic Programming", "Computer Science"] },
-  { id: 21, question: "Which technology is used for implementing virtual machines?", options: ["Hypervisor", "Firewall", "Load Balancer", "Router"], correctOption: "Hypervisor", genres: ["Virtualization", "Computer Science", "Basics"] },
-  { id: 22, question: "What is the purpose of a cache in a computer system?", options: ["Speed up data access", "Store data permanently", "Backup data", "Encrypt data"], correctOption: "Speed up data access", genres: ["Computer Architecture", "Caching", "Computer Science"] },
-  { id: 23, question: "Which data structure is used to implement a priority queue?", options: ["Heap", "Stack", "Queue", "Linked List"], correctOption: "Heap", genres: ["Data Structures", "Priority Queues", "Computer Science"] },
-  { id: 24, question: "What does DNS stand for?", options: ["Domain Name System", "Data Network Service", "Direct Node Switching", "Dynamic Name Service"], correctOption: "Domain Name System", genres: ["Networking", "Protocols", "Computer Science"] },
-  { id: 25, question: "Which of the following algorithms is used for data compression?", options: ["Huffman Coding", "Merge Sort", "QuickSort", "Binary Search"], correctOption: "Huffman Coding", genres: ["Algorithms", "Data Compression", "Computer Science"] },
-  { id: 26, question: "What is the primary purpose of a network router?", options: ["Forward data packets between networks", "Store data", "Manage local files", "Execute applications"], correctOption: "Forward data packets between networks", genres: ["Networking", "Routers", "Computer Science"] },
-  { id: 27, question: "Which of the following is an example of a non-relational database?", options: ["Cassandra", "Oracle", "SQL Server", "MySQL"], correctOption: "Cassandra", genres: ["Databases", "NoSQL", "Computer Science"] },
-  { id: 28, question: "What is the role of the ALU in a CPU?", options: ["Perform arithmetic and logic operations", "Manage memory", "Control input/output", "Execute instructions"], correctOption: "Perform arithmetic and logic operations", genres: ["Computer Architecture", "CPU", "Computer Science"] },
-  { id: 29, question: "Which algorithm is used for efficient searching in a sorted array?", options: ["Binary Search", "Linear Search", "Hashing", "Depth-First Search"], correctOption: "Binary Search", genres: ["Algorithms", "Search Algorithms", "Computer Science"] },
-  { id: 30, question: "What is the primary function of an operating system's file system?", options: ["Manage files and directories", "Control hardware devices", "Execute applications", "Maintain network connections"], correctOption: "Manage files and directories", genres: ["Operating Systems", "File Systems", "Computer Science"] }
+  { id: 16, question: "Which of the following is an example of a NoSQL database?", options: ["SQLite", "MySQL", "MongoDB", "PostgreSQL"], correctOption: "MongoDB", genres: ["Databases", "NoSQL", "Computer Science"] },
+  { id: 17, question: "What is the main advantage of using a linked list over an array?", options: ["Dynamic size", "Better cache performance", "Constant-time access", "Simple implementation"], correctOption: "Dynamic size", genres: ["Data Structures", "Linked Lists", "Computer Science"] },
+  { id: 18, question: "Which algorithm is commonly used for finding the shortest path in a graph?", options: ["Prim's Algorithm", "Kruskal's Algorithm", "A* Algorithm", "Dijkstra's Algorithm"], correctOption: "Dijkstra's Algorithm", genres: ["Algorithms", "Graph Algorithms", "Computer Science"] },
+  { id: 19, question: "What is the primary function of an interrupt in a computer system?", options: ["Control input/output operations", "Signal the CPU to stop current tasks", "Increase processing speed", "Manage memory"], correctOption: "Signal the CPU to stop current tasks", genres: ["Computer Architecture", "Interrupts", "Computer Science"] },
+  { id: 20, question: "Which of the following is an example of a dynamic programming problem?", options: ["Binary Search", "Knapsack Problem", "Graph Traversal", "Sorting Problem"], correctOption: "Knapsack Problem", genres: ["Algorithms", "Dynamic Programming", "Computer Science"] },
+  { id: 21, question: "Which technology is used for implementing virtual machines?", options: ["Router", "Load Balancer", "Hypervisor", "Firewall"], correctOption: "Hypervisor", genres: ["Virtualization", "Computer Science", "Basics"] },
+  { id: 22, question: "What is the purpose of a cache in a computer system?", options: ["Backup data", "Encrypt data", "Speed up data access", "Store data permanently"], correctOption: "Speed up data access", genres: ["Computer Architecture", "Caching", "Computer Science"] },
+  { id: 23, question: "Which data structure is used to implement a priority queue?", options: ["Stack", "Linked List", "Heap", "Queue"], correctOption: "Heap", genres: ["Data Structures", "Priority Queues", "Computer Science"] },
+  { id: 24, question: "What does DNS stand for?", options: ["Dynamic Name Service", "Domain Name System", "Data Network Service", "Direct Node Switching"], correctOption: "Domain Name System", genres: ["Networking", "Protocols", "Computer Science"] },
+  { id: 25, question: "Which of the following algorithms is used for data compression?", options: ["Huffman Coding", "Binary Search", "QuickSort", "Merge Sort"], correctOption: "Huffman Coding", genres: ["Algorithms", "Data Compression", "Computer Science"] },
+  { id: 26, question: "What is the primary purpose of a network router?", options: ["Manage local files", "Execute applications", "Store data", "Forward data packets between networks"], correctOption: "Forward data packets between networks", genres: ["Networking", "Routers", "Computer Science"] },
+  { id: 27, question: "Which of the following is an example of a non-relational database?", options: ["SQL Server", "MySQL", "Cassandra", "Oracle"], correctOption: "Cassandra", genres: ["Databases", "NoSQL", "Computer Science"] },
+  { id: 28, question: "What is the role of the ALU in a CPU?", options: ["Control input/output", "Execute instructions", "Perform arithmetic and logic operations", "Manage memory"], correctOption: "Perform arithmetic and logic operations", genres: ["Computer Architecture", "CPU", "Computer Science"] },
+  { id: 29, question: "Which algorithm is used for efficient searching in a sorted array?", options: ["Depth-First Search", "Hashing", "Binary Search", "Linear Search"], correctOption: "Binary Search", genres: ["Algorithms", "Search Algorithms", "Computer Science"] },
+  { id: 30, question: "What is the primary function of an operating system's file system?", options: ["Maintain network connections", "Control hardware devices", "Execute applications", "Manage files and directories"], correctOption: "Manage files and directories", genres: ["Operating Systems", "File Systems", "Computer Science"] }
 ];
 
 const Adaptive = () => {
@@ -345,7 +346,6 @@ const Adaptive = () => {
 
   // Select the appropriate question set based on the topic
   const getQuestionSet = () => {
-    console.log(topic);
     switch (topic) {
       case 'JEE':
         return QQJEE;
@@ -384,20 +384,20 @@ const Adaptive = () => {
 
   const handleSubmit = () => {
     if (userAnswer === null) return;
-
     const currentQuestion = selectedQuestions[currentQuestionIndex];
     const isCorrect = userAnswer === currentQuestion.correctOption;
-
+    
     if (isCorrect) {
       setMarks(marks + 1);
     } else {
       updateWrongTopicGenres(currentQuestion);
+      if(currentQuestionIndex>=3)console.log(wrongTopicGenres)
     }
-
     setIsSubmitted(true);
   };
 
   const handleNext = () => {
+    if(currentQuestionIndex<3)console.log(wrongTopicGenres)
     if (isSubmitted) {
       if (currentQuestionIndex + 1 < selectedQuestions.length) {
         setCurrentQuestionIndex(prevIndex => prevIndex + 1);
@@ -460,7 +460,6 @@ const Adaptive = () => {
     });
     setWrongTopicGenres(updatedGenres);
   };
-
   const getOptionStyle = (option) => {
     const currentQuestion = selectedQuestions[currentQuestionIndex];
 
@@ -573,7 +572,12 @@ const Adaptive = () => {
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <Navigationbar />
       </div>
-
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+         Question Topics : 
+        {currentQuestion && currentQuestion.genres.map(genre=>(
+          <div style={{marginLeft:5}}><h4>{genre}</h4></div>
+        ))}
+      </div>
       <h1 style={{ fontSize: '2.5rem',color: 'white'}}>Quiz</h1>
       {currentQuestion ? (
         <div className='BigDiv' style={{  backgroundColor: backgroundColor}}>
