@@ -1,0 +1,80 @@
+.outerdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb); /* Gradient from blue to light blue */
+}
+
+.innerdiv {
+  background-color: #fff;
+  border-radius: 15px; /* Match the border radius from quiz cards */
+  padding: 30px;
+  width: 70%;
+  display: flex;
+}
+
+.innerdiv01 {
+  width: 50%;
+}
+
+.innerdiv02 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.imgsrc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 25px;
+  width: 100%;
+}
+
+.outerform {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #ecf0f1; /* Lighter gray to match card background */
+  font-size: 17px;
+  color: #2c3e50; /* Darker color for text */
+  border: 1px solid #bdc3c7; /* Lighter border color */
+  border-radius: 15px; /* Match the border radius from quiz cards */
+}
+
+.button-63 {
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb); /* Gradient similar to outerdiv */
+  border: 0;
+  border-radius: 15px; /* Match the border radius from quiz cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  color: #34495e; /* Dark color for text */
+  font-family: 'Poppins', sans-serif; /* Match the font family */
+  font-size: 20px;
+  padding: 13px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-63:hover {
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly darker shadow on hover */
+}
+
+.signup-login {
+  padding-top: 7%;
+  text-align: center;
+}
+
+.para {
+  font-weight: bold;
+}
+

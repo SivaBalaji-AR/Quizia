@@ -1,0 +1,69 @@
+.navbar {
+    background-color: #34495e;
+    padding: 15px 30px;
+    margin-top: 15px;
+    border-radius: 10px;
+    display: flex;
+    max-width: 280px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar-image {
+    height: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-image:hover {
+    transform: scale(1.05);
+}
+
+.navbar-icon {
+    font-size: 1.5rem;
+    color: #ecf0f1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar-icon:hover {
+    color: #0db6ff;
+}
+
+.tooltip-container {
+    position: relative;
+}
+
+.tooltip-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    top: 150%;
+}
+
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, top 0.3s;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 10;
+    top: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+}

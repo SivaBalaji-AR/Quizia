@@ -1,0 +1,138 @@
+.AI-container {
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.Heading
+{
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.Topic
+{
+  font-size:3rem;
+  font-weight: bolder;
+  padding-top: 10px;
+  
+}
+.diff
+{
+  font-size: 1.5rem;
+  padding-bottom: 10PX;
+  font-weight: bold;
+}
+.notification {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color:#333;
+  color:#ffffff;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 1000; /* Ensure it is on top of other elements */
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+.AI_BigDiv {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 525px;
+  max-width: 1200px;
+  background-color: #e0eafc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.AI_BigDiv01 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  height: 50%; /* Adjusted to 50% height */
+  background-color: #e0eafc;
+  color: #333;
+}
+
+.AI_BigDiv0101 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #e0eafc;
+  text-align: center;
+}
+
+.AI_BigDiv02 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50%; /* Adjusted to 50% height */
+  padding: 20px;
+}
+
+.AI_BigDiv0201 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+  background-color:#e0eafc ;
+  border-radius: 20px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #2c3e50;
+  border-radius: 20px;
+  margin: 0 10px; /* Add space between the labels */
+  cursor: pointer; /* Ensures the entire div is clickable */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.AI_BigDiv0201.selected {
+  background-color: #360bab; /* Green background for selected option */
+  color: #fff; /* Change text color for better contrast */
+}
+
+
+.AI-main {
+  flex: 1;
+  padding: 20px;
+}
+
+.AI-assistant {
+  height:100vh;
+  width: 30%;
+  padding: 20px;
+  border-left: 1px solid #ccc;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.toggle-assistant-button {
+  margin-right: 20px;
+  background: #2c3e50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-assistant-button:hover {
+  background: #218838;
+}

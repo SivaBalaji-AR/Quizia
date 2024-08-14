@@ -1,0 +1,202 @@
+
+.newquiz-quiz-creator {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #e0eafc;
+    
+    margin-top: 70px; 
+    margin-bottom: 45px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.newquiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newquiz-home-button {
+    background-color: #183a1d; /* Button background color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.newquiz-home-button:hover {
+    background-color: #27512e; /* Darker color on hover */
+}
+
+.newquiz-quiz-creator h1 {
+    text-align: left;
+    color: #333;
+    margin: 0; /* Remove default margin to align text */
+    padding-bottom: 20px; /* Padding to separate title from content */
+    font-size: 40px;
+}
+
+
+.newquiz-form-group {
+    margin-bottom: 10px; /* Reduced margin to decrease gap */
+}
+
+.newquiz-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.newquiz-form-group input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.newquiz-option-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.newquiz-option-input input[type="radio"] {
+    margin-right: 10px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+.newquiz-option-input input[type="radio"].newquiz-selected {
+    border-color: green;
+}
+
+.newquiz-option-input input[type="radio"].newquiz-selected::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: green;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+
+.newquiz-form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.newquiz-form-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0a04b;
+    color: white;
+    cursor: pointer;
+}
+
+.newquiz-form-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.newquiz-questions-list {
+    margin-top: 20px;
+}
+
+.newquiz-question-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px; /* Reduced top margin */
+    margin-bottom: 45px; /* Bottom margin for the card */
+    position: relative;
+}
+
+.newquiz-question-card p {
+    margin: 5px 0;
+}
+
+.newquiz-questions-list ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.newquiz-questions-list li {
+    padding: 5px 0;
+}
+
+.newquiz-correct-option {
+    background-color: #d4edda;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.newquiz-question-actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.newquiz-edit-icon,
+.newquiz-delete-icon {
+    cursor: pointer;
+    margin-left: 4px; /* Gap between icons */
+}
+
+.newquiz-edit-icon {
+    color: #007bff; /* Blue color for Edit icon */
+}
+
+.newquiz-edit-icon:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.newquiz-delete-icon {
+    color: #dc3545; /* Dark red color for Delete icon */
+}
+
+.newquiz-delete-icon:hover {
+    color: #c82333; /* Darker red on hover */
+}
+
+.newquiz-publish-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.newquiz-publish-button button {
+    padding: 10px 20px;
+    background-color: #183a1d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newquiz-publish-button button:hover {
+    background-color: #218838;
+}
+
+.newquiz-error {
+    color: red;
+    font-size: 14px;
+    margin-top: -5px;
+}

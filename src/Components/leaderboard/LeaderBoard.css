@@ -1,0 +1,100 @@
+/* LeaderBoard.css */
+
+.leaderboard-container {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  min-height: 100vh;
+  color: #333;
+}
+
+.leaderboard-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #090089; /* Matching theme color */
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.filters {
+  margin-bottom: 30px;
+  display: flex; /* Use flexbox for side-by-side layout */
+  justify-content: center; /* Center the filters */
+  gap: 20px; /* Add space between filters */
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.filter select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px; /* Rounded corners for dropdowns */
+  background-color: #fff; /* White background for dropdowns */
+  cursor: pointer;
+}
+
+.table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+.table thead {
+  background-color: #090089; /* Matching theme color */
+}
+
+.table thead th {
+  background-color: #090089;
+  border-bottom: 2px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  color: #fff;
+}
+
+.table tbody td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px;
+  color:#34495e;
+  background-color:#c2e9fb ; /* White background for rows */
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f0f0f0; /* Alternating row colors */
+}
+
+.table tbody tr:hover {
+  background-color: #e5e5e5; /* Hover effect for rows */
+}
+
+.table th, .table td {
+  text-align: center; /* Center-align text in table cells */
+}
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column; /* Stack filters on smaller screens */
+  }
+
+  .filter {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .filter select {
+    width: 100%;
+  }
+}
