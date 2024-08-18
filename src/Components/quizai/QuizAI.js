@@ -25,8 +25,13 @@ const QuizAI = () => {
     const { topicarr, levelarr } = location.state || {};
     const tno=topicarr.length;
     const fetchData = async () => {
+        const apiKey = localStorage.getItem('geminiApiKey');
+
+        if (!apiKey) {
+           console.error('Gemini API key not found in local storage.');
+        } else {
         try {
-            const genAI = new GoogleGenerativeAI("AIzaSyCojit0riyrgm5SO-6xbbjzH25QzIoh3Lw");
+            const genAI = new GoogleGenerativeAI(apiKey);
             const model = genAI.getGenerativeModel({
                 model: "gemini-1.5-pro",
                 generationConfig: {
@@ -60,6 +65,7 @@ const QuizAI = () => {
             console.error('Error fetching data:', error);
             setError('Failed to fetch data. Please try again later.');
         }
+    }
     };
 
     useEffect(() => {

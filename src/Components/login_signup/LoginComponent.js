@@ -14,7 +14,7 @@ const LoginComponent = ({ onClose }) =>
 
   useEffect(() => 
   {
-    axios.get('http://localhost:8080/user/getUser') 
+    axios.get(`${process.env.REACT_APP_API_URL}/user`) 
       .then(response => setUsers(response.data))
       .catch(error => console.error('Error:', error));
   }, []);

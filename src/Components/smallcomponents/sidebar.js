@@ -20,7 +20,7 @@ const Sidebar = () => {
     const [quizTopics, setQuizTopics] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/quiz/getQuiz')
+        axios.get(`${process.env.REACT_APP_API_URL2}/Quiz`)
             .then(response => {
                 const uniqueTopics = [...new Set(response.data.map(quiz => quiz.quizTopic))];
                 setQuizTopics(uniqueTopics);

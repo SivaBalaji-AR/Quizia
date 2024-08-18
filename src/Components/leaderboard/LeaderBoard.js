@@ -12,12 +12,14 @@ const LeaderBoard = () => {
   const [leaderboardData, setLeaderBoardData] = useState([]);
   const [selectedQuizName, setSelectedQuizName] = useState('All');
   const [selectedParticipant, setSelectedParticipant] = useState('All');
-
+  const apiurl=process.env.REACT_APP_API_URL;
+  console.log(apiurl+"/result");
   useEffect(() => {
-    axios.get('http://localhost:8080/result/getResult')
+    axios.get(`${process.env.REACT_APP_API_URL}/result`)
       .then(response => setLeaderBoardData(response.data))
       .catch(error => console.error('Error:', error));
-  }, []);
+  }
+    ,console.log(leaderboardData), []);
 
   const topics = [...new Set(leaderboardData.map(entry => entry.qtopic)), 'All'];
   const names = [...new Set(leaderboardData.map(entry => entry.participant)), 'All'];

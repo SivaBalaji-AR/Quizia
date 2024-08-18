@@ -21,7 +21,7 @@ const Quizdisplay = () => {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:8080/quiz/getQuiz')
+        axios.get(`${process.env.REACT_APP_API_URL2}/Quiz`)
             .then(response => setQuizzes(response.data.filter(quiz => quiz.quizTopic === quizTopic)))
             .catch(error => console.error('Error:', error));
     }, [quizTopic]);

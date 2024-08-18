@@ -8,10 +8,14 @@ const QuizAssistant = ({ question, solution, resources }) => {
     const [error, setError] = useState('');
     const [resourceSuggested, setResourceSuggested] = useState(false);
     const [showResources, setShowResources] = useState(false);
-    //console.log("Solutioin:"+solution);
     const fetchHint = async () => {
+        const apiKey = localStorage.getItem('geminiApiKey');
+
+        if (!apiKey) {
+            console.error('Gemini API key not found in local storage.');
+        } else {
         try {
-            const genAI = new GoogleGenerativeAI("AIzaSyC2Qi6RuTrJybr6hMWBcuX345v2PHFb1sw");
+            const genAI = new GoogleGenerativeAI(apiKey);
             const model = genAI.getGenerativeModel({
                 model: "gemini-1.5-pro",
                 generationConfig: {
@@ -54,6 +58,7 @@ const QuizAssistant = ({ question, solution, resources }) => {
             console.error('Error fetching hint:', error);
             setError('Failed to fetch hint. Please try again later.');
         }
+    }
     };
 
     return (

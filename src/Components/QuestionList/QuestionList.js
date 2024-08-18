@@ -18,11 +18,14 @@ const QuestionList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:8080/quiz/getQuiz')
+    axios.get(`${process.env.REACT_APP_API_URL2}/Questions`)
       .then(response => {
-        const filteredQuiz = response.data.find(quiz => quiz.quizId === quizId);
+        const filteredQuiz = response.data.filter(quiz => quiz.quizId === Number(quizId));
+        console.log(quizId);
+        console.log(response.data[0].quizId);
+        console.log(filteredQuiz);
         if (filteredQuiz) {
-          setQuestionList(filteredQuiz.questions);
+          setQuestionList(filteredQuiz);
         }
       })
       .catch(error => console.error('Error:', error));
