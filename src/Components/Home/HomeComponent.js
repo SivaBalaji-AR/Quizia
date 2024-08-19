@@ -57,7 +57,7 @@ const HomeComponent = () => {
         <nav className="navbar">
           <ul>
             <li className="tooltip-container">
-              <FaQuestionCircle className="navbar-icon" onClick={() => updateQuizTopic('Java')} />
+              <FaQuestionCircle className="navbar-icon" onClick={() => updateQuizTopic('NEET')} />
               <div className="tooltip">Quiz</div>
             </li>
             <li className="tooltip-container">
@@ -81,7 +81,7 @@ const HomeComponent = () => {
         </div>
 
         <div className='quiz-gridh'>
-          <div className='quiz-cardh' onClick={() => updateQuizTopic('Java')}>
+          <div className='quiz-cardh' onClick={() => updateQuizTopic('NEET')}>
             <h1>Assesment</h1>
             <h3>Test your knowledge</h3>
           </div>

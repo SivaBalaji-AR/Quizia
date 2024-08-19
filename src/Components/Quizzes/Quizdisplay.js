@@ -29,7 +29,9 @@ const Quizdisplay = () => {
     return (
         <>
         <div className="quiz-display-container">
-            <div><Navbar/></div>
+            <div className="navbar-container">
+                <Navbar />
+            </div>
             <Sidebar/>
             <h1 className={`quiz-page-title`}>{quizTopic}</h1>
             <div className={`quiz-grid`}>

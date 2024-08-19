@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { FunctionDeclarationSchemaType } from '@google/generative-ai';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { useNavigate ,useLocation} from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { QuizContext } from '../context/QuizContext';
 import QuizAssistant from '../partner/QuizAssistant'; // Import QuizAssistant
 
@@ -15,7 +15,7 @@ const QuizAI = () => {
     const [error, setError] = useState('');
     const [mark, setMark] = useState(0);
     const [btnName, setBtnName] = useState("Submit");
-    const [answerStatus, setAnswerStatus] = useState(null); 
+    const [answerStatus, setAnswerStatus] = useState(null);
     const [notification, setNotification] = useState('');
     const [focusTopics, setFocusTopics] = useState({});
     const [showAssistant, setShowAssistant] = useState(false);
@@ -23,13 +23,16 @@ const QuizAI = () => {
     let navigate = useNavigate();
     const location = useLocation();
     const { topicarr, levelarr } = location.state || {};
-    const tno=topicarr.length;
+    const tno = topicarr.length;
+
     const fetchData = async () => {
         const apiKey = localStorage.getItem('geminiApiKey');
 
         if (!apiKey) {
-           console.error('Gemini API key not found in local storage.');
-        } else {
+            console.error('Gemini API key not found in local storage.');
+            return;
+        }
+
         try {
             const genAI = new GoogleGenerativeAI(apiKey);
             const model = genAI.getGenerativeModel({
@@ -50,26 +53,22 @@ const QuizAI = () => {
                     }
                 }
             });
-            let topic=topicarr[Math.floor(Math.random()*tno)]
+            let topic = topicarr[Math.floor(Math.random() * tno)];
             setquesTop(topic);
             const prompt = `Create a challenging and creative multiple-choice question with four options. The question should belong to the main topic of ${topic}, with a toughness level of ${levelarr}. Ensure the question requires critical thinking and problem-solving skills from the user. The focus topic should be automatically generated based on the content of the question. Include the correct answer as an integer (1-4).`;
             const result = await model.generateContent(prompt);
-            const responseText = await result.response.text(); 
-            //console.log("Raw response text:", responseText);
+            const responseText = await result.response.text();
             const parsedResponse = JSON.parse(responseText);
             setQuestionData(parsedResponse);
             setCorrectAnswer(parsedResponse.correctOption);
-        } 
-        catch (error) 
-        {
+        } catch (error) {
             console.error('Error fetching data:', error);
             setError('Failed to fetch data. Please try again later.');
         }
-    }
     };
 
     useEffect(() => {
-        fetchData(); 
+        fetchData();
     }, []);
 
     const handleDivClick = (id) => {
@@ -77,6 +76,10 @@ const QuizAI = () => {
             setSelectedOption(id);
         }
     };
+
+    useEffect(() => {
+        fetchData(); 
+    }, []);
 
     const handleResult = () => {
         let cust;
@@ -192,23 +195,13 @@ const QuizAI = () => {
     };
     
     return (
-        <div className={`AI-container`}>
-            <div className='AI-main'>
-                {notification && (
-                    <div className='notification'>
-                        {notification}
-                    </div>
-                )}
-                <div className='Topic'>{quesTop}</div>
-                <div className='Heading'>{questionData.focustopic}</div>
-                <div className='diff'>{levelarr}</div>
-                <div>
-                <button className='toggle-assistant-button' onClick={() => setShowAssistant(!showAssistant)}>
-                        {showAssistant ? "Hide Assistant" : "Show Assistant"}
-                </button>
+        <div className="AI-container">
+            {notification && <div className="notification">{notification}</div>}
+            <div className="AI-main">
+                <div className="Topic">Quiz Topic: {quesTop}</div>
+                <div className="diff">Difficulty Level: {levelarr}</div>
                 <button className='toggle-assistant-button' onClick={() => handleRes()}>End Test</button>
-                </div>
-                <div className='AI_BigDiv'>
+                    {questionData&&<div className='AI_BigDiv'>
                     <div className='AI_BigDiv01'>
                         <div className='AI_BigDiv0101'>{questionData.question}</div>
                     </div>
@@ -247,17 +240,16 @@ const QuizAI = () => {
                         </div>
                     </div>
                     <button className='button-27' onClick={handleResult}>{btnName}</button>
-                </div>
-            </div>
-            {showAssistant && (
-                <div className='AI-assistant'>
-                    <QuizAssistant 
+                <button className="toggle-assistant-button" onClick={() => setShowAssistant(!showAssistant)}>
+                    {showAssistant ? 'Hide Assistant' : 'Show Assistant'}
+                </button>
+                {showAssistant &&  <QuizAssistant 
                         question={questionData.question}
                         solution={getCorrectAnswerText()}  
-                        resources={["we get it from DataBase , by analysing the topics of question"]}
-                    />
-                </div>
-            )}
+                        resources={questionData.focustopic}
+                    />}
+            </div>}
+        </div>
         </div>
     );
 };

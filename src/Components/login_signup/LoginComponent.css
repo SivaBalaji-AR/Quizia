@@ -1,3 +1,5 @@
+/* Base Styles */
+
 .outerdiv {
   display: flex;
   justify-content: center;
@@ -5,39 +7,35 @@
   height: 600px;
   border-radius: 10px;
   background: linear-gradient(to right, #a1c4fd, #c2e9fb); /* Gradient from blue to light blue */
+  padding: 20px; /* Add some padding for smaller screens */
 }
 
 .innerdiv {
   background-color: #fff;
   border-radius: 15px; /* Match the border radius from quiz cards */
   padding: 30px;
-  width: 70%;
+  width: 100%;
+  max-width: 500px; /* Limit the width for larger screens */
   display: flex;
+  flex-direction: column; /* Stack items vertically for better mobile view */
+  align-items: center; /* Center the content */
+  height:100%;
 }
 
-.innerdiv01 {
-  width: 50%;
-}
-
-.innerdiv02 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
+.innerdiv01, .innerdiv02 {
+  width: 100%;
 }
 
 .imgsrc {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 25px;
-  width: 100%;
+  width: 80%; /* Adjust the size for smaller screens */
+  max-width: 200px; /* Ensure the image doesn't get too large */
+  padding-bottom: 20px;
 }
 
 .outerform {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .input {
@@ -78,3 +76,54 @@
   font-weight: bold;
 }
 
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .outerdiv {
+    height: auto; /* Adjust height for smaller screens */
+  }
+
+  .innerdiv {
+    padding: 20px;
+    width: 90%;
+    max-width: none; /* Remove max-width constraint */
+  }
+
+  .imgsrc {
+    width: 60%;
+    max-width: 150px; /* Ensure the image fits well */
+  }
+
+  .input {
+    font-size: 16px; /* Slightly smaller text for better fit */
+  }
+
+  .button-63 {
+    font-size: 18px; /* Adjust button text size */
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .outerdiv {
+    padding: 10px; /* Add more padding for very small screens */
+  }
+
+  .innerdiv {
+    padding: 15px;
+  }
+
+  .imgsrc {
+    width: 50%;
+    max-width: 120px; /* Further adjust image size */
+  }
+
+  .input {
+    font-size: 15px; /* Smaller font size for small screens */
+  }
+
+  .button-63 {
+    font-size: 16px; /* Further adjust button text size */
+    padding: 8px;
+  }
+}

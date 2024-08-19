@@ -97,13 +97,7 @@ const QuizAssistant = ({ question, solution, resources }) => {
                         <div className='resource-suggestion'>
                             <p>It seems like you might need more help with basic or key concepts. Here are some resources to assist you:</p>
                             <ul>
-                                {resources.map((resource, index) => (
-                                    <li key={index}>
-                                        <a target="_blank" rel="noopener noreferrer">
-                                            <strong>{resource}</strong>
-                                        </a>
-                                    </li>
-                                ))}
+                                {resources}
                             </ul>
                         </div>
                     )}

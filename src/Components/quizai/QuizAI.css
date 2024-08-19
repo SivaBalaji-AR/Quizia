@@ -1,54 +1,38 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 .AI-container {
   display: flex;
-  flex-direction:row;
+  flex-direction: column; /* Change to column for better stacking on small screens */
   justify-content: center;
   align-items: center;
-  height: 100vh;
+
   background: linear-gradient(to right, #a1c4fd, #c2e9fb);
-  position: relative;
-  padding-bottom: 20px;
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding is included in total width/height */
 }
 
-.Heading
-{
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding-bottom: 10px;
-}
-
-.Topic
-{
-  font-size:3rem;
-  font-weight: bolder;
-  padding-top: 10px;
-  
-}
-.diff
-{
-  font-size: 1.5rem;
-  padding-bottom: 10PX;
-  font-weight: bold;
-}
 .notification {
   position: fixed;
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
-  background-color:#333;
-  color:#ffffff;
+  background-color: #333;
+  color: #ffffff;
   border-radius: 5px;
   font-size: 16px;
-  z-index: 1000; /* Ensure it is on top of other elements */
+  z-index: 1000;
   transition: opacity 0.5s ease-in-out;
 }
 
-
-.AI_BigDiv {
+.AI-main {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  height: 525px;
+  width: 100%;
   max-width: 1200px;
   background-color: #e0eafc;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -56,32 +40,50 @@
   overflow: hidden;
 }
 
+.Topic {
+  font-size: 2.5rem; /* Adjusted for responsiveness */
+  font-weight: bolder;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.Heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.diff {
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.AI_BigDiv {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto; /* Adjusted to auto for better responsiveness */
+  background-color: #e0eafc;
+}
+
 .AI_BigDiv01 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  height: 50%; /* Adjusted to 50% height */
+  padding: 20px;
   background-color: #e0eafc;
-  color: #333;
 }
 
 .AI_BigDiv0101 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  background-color: #e0eafc;
   text-align: center;
 }
 
 .AI_BigDiv02 {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 50%; /* Adjusted to 50% height */
+  flex-direction: column; /* Stack options vertically on small screens */
   padding: 20px;
 }
 
@@ -89,41 +91,50 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
-  height: 100%;
-  background-color:#e0eafc ;
+  width: 100%;
+  height: 60px;
+  background-color: #e0eafc;
+  border: 3px solid #2c3e50;
   border-radius: 20px;
-  border-width: 3px;
-  border-style: solid;
-  border-color: #2c3e50;
-  border-radius: 20px;
-  margin: 0 10px; /* Add space between the labels */
-  cursor: pointer; /* Ensures the entire div is clickable */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  margin-bottom: 10px; /* Space between options */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.AI_BigDiv0201:last-child {
+  margin-bottom: 0; /* Remove margin for the last item */
 }
 
 .AI_BigDiv0201.selected {
-  background-color: #360bab; /* Green background for selected option */
-  color: #fff; /* Change text color for better contrast */
+  background-color: #360bab;
+  color: #fff;
 }
 
+.button-27 {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-.AI-main {
-  flex: 1;
-  padding: 20px;
+.button-27:hover {
+  background-color: #0056b3;
 }
 
 .AI-assistant {
-  height:100vh;
-  width: 30%;
+  width: 100%;
+  max-width: 400px; /* Adjusted to fit better on smaller screens */
   padding: 20px;
-  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
 .toggle-assistant-button {
-  margin-right: 20px;
   background: #2c3e50;
   color: #fff;
   border: none;
@@ -131,8 +142,53 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin: 10px 0;
 }
 
 .toggle-assistant-button:hover {
   background: #218838;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .AI_BigDiv {
+    width: 100%;
+  }
+
+  .AI_BigDiv02 {
+    flex-direction: column;
+  }
+
+  .AI_BigDiv0201 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .AI-assistant {
+    position: static;
+    border-top: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .Topic {
+    font-size: 1.8rem;
+  }
+
+  .Heading {
+    font-size: 1.2rem;
+  }
+
+  .diff {
+    font-size: 1rem;
+  }
+
+  .button-27 {
+    font-size: 14px;
+  }
+
+  .toggle-assistant-button {
+    font-size: 14px;
+  }
 }

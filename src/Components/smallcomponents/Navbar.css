@@ -1,13 +1,18 @@
+/* Navbar Styles */
+
 .navbar {
     background-color: #34495e;
     padding: 15px 30px;
     margin-top: 15px;
     border-radius: 10px;
     display: flex;
-    max-width: 280px;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Stick navbar to the top */
+    top: 0;
+    max-width: 330px;
+    z-index: 1000; /* Ensure it stays on top of other content */
 }
 
 .navbar ul {
@@ -20,15 +25,6 @@
 
 .navbar li {
     position: relative;
-}
-
-.navbar-image {
-    height: 50px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.navbar-image:hover {
-    transform: scale(1.05);
 }
 
 .navbar-icon {
@@ -66,4 +62,22 @@
     top: 130%;
     left: 50%;
     transform: translateX(-50%);
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        align-items: flex-start;
+        max-width: fit-content;
+    }
+    .navbar ul {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .navbar-icon {
+        font-size: 1.2rem;
+    }
 }

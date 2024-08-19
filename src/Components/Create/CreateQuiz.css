@@ -3,12 +3,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
   align-items: center;
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
   font-size: 18px;
   font-weight: 600;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  padding-bottom: 40px;
+  padding: 20px;
 }
 
 /* BigDiv container styles */
@@ -16,37 +16,38 @@
   display: flex;
   flex-direction: column;
   width: 80%;
-  height: 525px;
   max-width: 1200px;
   background-color: #e0eafc;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 40px;
   overflow: hidden;
+  padding: 20px;
 }
-
 
 .quiz-header {
   text-align: center;
   margin-bottom: 20px;
   color: #2c3e50;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
 }
+
 .quiz-subheader {
   text-align: center;
   margin-bottom: 20px;
   color: #2c3e50;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .BigDiv01 {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px;
-  height: 50%;
   background-color: #e0eafc;
   color: #333;
+  margin-bottom: 20px; /* Add spacing between the two sub-divs */
 }
 
 .BigDiv0101 {
@@ -54,17 +55,17 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  background-color: #e0eafc;
   text-align: center;
+  padding: 10px;
+  background-color: #e0eafc;
 }
 
 .BigDiv02 {
+  flex: 1;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
-  height: 50%;
+  align-items: center;
   padding: 20px;
 }
 
@@ -72,21 +73,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
-  height: 100%;
+  width: 48%; /* Adjust width to align two divs in one row */
+  min-width: 20vh; /* Ensure a minimum width for small screens */
+  height: 20vh;
   background-color: #e0eafc;
   border-radius: 20px;
   border-width: 2px;
   border-style: solid;
   border-color: #2c3e50;
-  margin: 0 10px; 
+  margin-bottom: 20px; /* Add spacing between rows if they wrap */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .BigDiv0201.selected {
-  background-color: #090089; 
-  color: #fff; 
+  background-color: #090089;
+  color: #fff;
+}
+
+.BigDiv0201.correct {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.BigDiv0201.incorrect {
+  background-color: #dc3545;
+  color: #fff;
 }
 
 .BigDiv020101 {
@@ -98,7 +110,7 @@
   border-width: 2px;
   border-style: solid;
   border-color: #2c3e50;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .button-next {
@@ -109,11 +121,10 @@
   border-radius: 10px;
   font-size: 18px;
   font-weight: 600;
-  padding: 0px 15px;
+  padding: 10px 15px;
   text-align: center;
   transition: transform 0.6s ease, box-shadow 0.7s ease;
   width: 100%;
-  min-height: 45px;
 }
 
 .button-next:hover {
@@ -130,12 +141,26 @@
   pointer-events: none;
 }
 
-.BigDiv0201.correct {
-  background-color: #28a745;
-  color: #fff;
-}
+@media (min-width: 1060px) {
+  /* Styles for larger screens */
+  .BigDiv {
+    flex-direction: column;
+    height: 525px;
+  }
 
-.BigDiv0201.incorrect {
-  background-color: #dc3545; 
-  color: #fff;
+  .BigDiv01, .BigDiv02 {
+    flex: 1;
+    padding: 40px;
+  }
+
+  .BigDiv02 {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .BigDiv0201 {
+    width: 23%;
+    margin: 0 10px;
+  }
 }

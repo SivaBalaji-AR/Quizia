@@ -38,7 +38,7 @@ const LeaderBoard = () => {
 
   return (
     <div className="leaderboard-container">
-      <div style={{marginLeft:"39%"}}><Navbar/></div>
+      <div className='navbar-in-comp'><Navbar/></div>
       <h1 className="leaderboard-header">Leaderboard</h1>
       
       <div className="filters">

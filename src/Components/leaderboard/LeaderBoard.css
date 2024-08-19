@@ -84,6 +84,9 @@
   text-align: center; /* Center-align text in table cells */
 }
 
+.navbar-in-comp{
+  margin-left: 37%;
+}
 @media (max-width: 768px) {
   .filters {
     flex-direction: column; /* Stack filters on smaller screens */
@@ -93,7 +96,9 @@
     width: 100%;
     margin-bottom: 10px;
   }
-
+  .navbar-in-comp{
+    margin-left: 30%;
+  }
   .filter select {
     width: 100%;
   }

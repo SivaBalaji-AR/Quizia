@@ -1,71 +1,84 @@
 /* General Styles */
-
-
 .nt-home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .nt-content {
-    width: 90%;
-    max-width: 1200px;
-    margin-top: 40px;
-    text-align: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px; /* Add some padding to handle small screen spacing */
+}
+
+.nt-content {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.nt-title {
+  font-size: 2rem; /* Reduce the font size slightly */
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.nt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted to be more flexible */
+  gap: 20px; /* Use fixed gap for consistency across devices */
+  margin-bottom: 5%;
+}
+
+.nt-card {
+  background-color: #fff;
+  border-radius: 10px; /* Slightly reduced radius for a more compact look */
+  padding: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nt-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.nt-card-content {
+  text-align: center;
+}
+
+.nt-card-content h2 {
+  font-size: 1.25rem;
+  color: #333;
+  margin: 10px 0; /* Add some margin for better spacing */
+}
+
+.nt-card-content p {
+  color: #777;
+  font-size: 0.9rem; /* Slightly smaller font size for better readability on small screens */
+}
+
+@media (max-width: 768px) {
   .nt-title {
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 40px;
+    font-size: 1.5rem; /* Smaller title on small screens */
   }
-  
+
   .nt-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 5%;
-    margin-bottom: 5%;
+    gap: 10px; /* Less gap on smaller screens */
   }
-  
+
   .nt-card {
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 10px; /* Reduce padding on smaller screens */
   }
-  
-  .nt-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  .nt-icon {
-    border-radius: 10px;
-    max-width: 90%;
-    max-height: 50%;
-    margin-bottom: 10px;
-    object-fit: contain; /* Ensure the image fits within the container without distortion */
-  }
-  
-  .nt-card-content {
-    text-align: center;
-  }
-  
+
   .nt-card-content h2 {
-    font-size: 1.5rem;
-    color: #333;
-    margin: 0;
+    font-size: 1rem; /* Smaller font size for smaller screens */
   }
-  
+
   .nt-card-content p {
-    color: #777;
-    font-size: 1rem;
+    font-size: 0.8rem; /* Smaller paragraph text on small screens */
   }
+}
