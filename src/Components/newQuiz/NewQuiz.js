@@ -141,6 +141,7 @@ const NewQuiz = () => {
     <div className='entirePage'>
       <div style={{marginLeft:"39%"}}><Navbar/></div>
       <div className="newquiz-quiz-creator">
+      <h3 style={{color:'red'}}>"You cannot publish the quiz", but you can experience all its functionalities</h3>
       <div className="newquiz-header">
          <h1>Create a Quiz</h1>
         </div>
