@@ -107,7 +107,7 @@ const HomeComponent = () => {
             </div>
             <div className="footer-section">
               <h2>Contact Us</h2>
-              <p>Email: support@quizmaster.com</p>
+              <p>Email: support@quizia.com</p>
               <p>Phone: +123 456 7890</p>
             </div>
             <div className="footer-section">
@@ -126,7 +126,7 @@ const HomeComponent = () => {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2024 Quiz Master. All rights reserved.</p>
+            <p>&copy; 2024 Quizia. All rights reserved.</p>
           </div>
         </footer>
       </div>
