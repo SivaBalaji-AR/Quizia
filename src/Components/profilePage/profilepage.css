@@ -11,7 +11,11 @@
     text-align: center;
     margin-bottom: 20px;
   }
-  
+  .navbar-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the Navbar */
+  }
   .user-details, .test-results {
     margin-bottom: 30px;
   }

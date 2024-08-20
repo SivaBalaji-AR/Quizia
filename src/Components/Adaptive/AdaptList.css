@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 20px; /* Add some padding to handle small screen spacing */
+  padding: 20px;
 }
 
 .nt-content {
@@ -15,21 +15,21 @@
 }
 
 .nt-title {
-  font-size: 2rem; /* Reduce the font size slightly */
+  font-size: 2rem;
   color: #ffffff;
   margin-bottom: 20px;
 }
 
 .nt-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted to be more flexible */
-  gap: 20px; /* Use fixed gap for consistency across devices */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
   margin-bottom: 5%;
 }
 
 .nt-card {
   background-color: #fff;
-  border-radius: 10px; /* Slightly reduced radius for a more compact look */
+  border-radius: 10px;
   padding: 15px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -53,32 +53,57 @@
 .nt-card-content h2 {
   font-size: 1.25rem;
   color: #333;
-  margin: 10px 0; /* Add some margin for better spacing */
+  margin: 10px 0;
 }
 
 .nt-card-content p {
   color: #777;
-  font-size: 0.9rem; /* Slightly smaller font size for better readability on small screens */
+  font-size: 0.9rem;
 }
 
+/* Mobile Styles */
 @media (max-width: 768px) {
   .nt-title {
-    font-size: 1.5rem; /* Smaller title on small screens */
+    font-size: 1.5rem;
   }
 
   .nt-grid {
-    gap: 10px; /* Less gap on smaller screens */
+    gap: 10px;
+    grid-template-columns: 1fr; /* Single column for mobile screens */
   }
 
   .nt-card {
-    padding: 10px; /* Reduce padding on smaller screens */
+    padding: 10px;
+    border-radius: 8px; /* Slightly smaller border-radius for a tighter look */
   }
 
   .nt-card-content h2 {
-    font-size: 1rem; /* Smaller font size for smaller screens */
+    font-size: 1rem;
+    margin: 8px 0; /* Adjust margin for better spacing on mobile */
   }
 
   .nt-card-content p {
-    font-size: 0.8rem; /* Smaller paragraph text on small screens */
+    font-size: 0.8rem;
+  }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 480px) {
+  .nt-title {
+    font-size: 1.25rem; /* Smaller title for extra small screens */
+  }
+
+  .nt-card {
+    padding: 8px; /* Less padding for very small screens */
+    border-radius: 6px; /* Further reduced border-radius */
+  }
+
+  .nt-card-content h2 {
+    font-size: 0.9rem; /* Smaller font size for headings */
+    margin: 6px 0; /* Tighter margin */
+  }
+
+  .nt-card-content p {
+    font-size: 0.75rem; /* Smaller paragraph text */
   }
 }

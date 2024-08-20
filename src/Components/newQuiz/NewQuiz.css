@@ -13,7 +13,11 @@
     flex-direction: column;
 }
 
-
+.navbar-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the Navbar */
+  }
 .newquiz-header {
     display: flex;
     justify-content: space-between;

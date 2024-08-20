@@ -25,8 +25,8 @@ export default function SignupComponent() {
 
     const userExists = await checkUserExists(signupDetails.username);
     if (userExists) {
-      alert('User already exists. Redirecting to login...');
-      navigate('/login');
+      alert('User already exists. Redirecting to Home...');
+      navigate('/');
       return;
     }
 

@@ -1,12 +1,18 @@
-body{
+body {
   background: linear-gradient(to right, #a1c4fd, #c2e9fb);
 }
+
 .result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
   font-family: 'Poppins', sans-serif;
   color: #333;
   background: linear-gradient(to right, #a1c4fd, #c2e9fb);
   min-height: 100vh;
+  width: 100%; /* Ensure the container covers the full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .result-header {
@@ -14,7 +20,7 @@ body{
   margin-bottom: 30px;
   font-size: 2.5rem;
   font-weight: bold;
-  color: #090089; /* Matching theme color */
+  color: #090089;
 }
 
 .result-info {
@@ -33,19 +39,24 @@ body{
   margin: 10px 0;
 }
 
+.result-table-container {
+  width: 100%; /* Make the container full width */
+  overflow-x: auto; /* Allow horizontal scrolling */
+}
+
 .result-table {
   border-collapse: collapse;
-  width: 80%;
-  margin: 0 auto;
+  width: 100%; /* Make table width 100% to fit its container */
   border: 1px solid #ddd;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
   background-color: #f9f9f9;
+  table-layout: fixed; /* Fix table layout to prevent overflow */
 }
 
 .result-table thead {
-  background-color: #090089; /* Matching theme color */
+  background-color: #090089;
 }
 
 .result-table th, .result-table td {
@@ -78,7 +89,7 @@ body{
 
 .links a {
   text-decoration: none;
-  color: #090089; /* Matching theme color */
+  color: #090089;
   font-size: 1rem;
   margin: 0 15px;
   transition: color 0.3s ease;
@@ -89,17 +100,44 @@ body{
   text-decoration: underline;
 }
 
+.navbar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the Navbar */
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
-  .result-table {
-      width: 100%;
+  .result-header {
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
 
   .result-info ul {
-      font-size: 1rem;
+    font-size: 1rem;
+  }
+
+  .result-table {
+    width: 100%;
+  }
+
+  .result-table th, .result-table td {
+    padding: 10px 12px;
+    font-size: 0.9rem;
   }
 
   .links a {
-      display: block;
-      margin: 10px 0;
+    display: block;
+    margin: 10px 0;
+    font-size: 0.9rem;
+  }
+
+  .result-container {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .result-info li {
+    margin: 8px 0;
   }
 }

@@ -244,3 +244,98 @@ body {
 *, *::before, *::after {
     box-sizing: border-box;
 }
+
+
+/* Media Query for Tablets (Portrait and Landscape) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .navbar-icon {
+        font-size: 1.2rem;
+    }
+    
+    .home-content {
+        padding: 40px 10px;
+    }
+    
+    .home-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .home-content p {
+        font-size: 1.2rem;
+    }
+    
+    .quiz-gridh {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    
+    .quiz-cardh {
+        width: 100%;
+        height: auto; /* Adjust height automatically */
+        max-width: none; /* Remove max-width constraint */
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+    
+    .navbar-icon {
+        font-size: 1rem;
+    }
+    
+    .home-content {
+        padding: 20px 10px;
+    }
+    
+    .home-content h1 {
+        font-size: 2rem;
+    }
+    
+    .home-content p {
+        font-size: 1rem;
+    }
+    
+    .quiz-cardh {
+        width: 100%;
+        height: auto;
+        max-width: none;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .footer-section {
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .social-icon img {
+        width: 30px;
+        height: 30px;
+    }
+}

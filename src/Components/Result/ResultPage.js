@@ -73,7 +73,9 @@ function ResultPage() {
   return (
     <div style={{ background: 'linear-gradient(to right, #a1c4fd, #c2e9fb)', height: '100vh' }}>
       <div className="result-container">
-        <div style={{ marginLeft: "39%" }}><Navbar /></div>
+      <div className="navbar-wrapper">
+          <Navbar />
+        </div>
         <h2 className="result-header">Result Page</h2>
         <div className="result-info">
           <ul>
@@ -82,6 +84,7 @@ function ResultPage() {
             <li>You Scored: {mark}</li>
           </ul>
         </div>
+        <div className="result-table-container">
         <table className="result-table">
           <thead>
             <tr>
@@ -108,6 +111,7 @@ function ResultPage() {
             )}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );

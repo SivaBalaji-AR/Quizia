@@ -38,7 +38,9 @@ const LeaderBoard = () => {
 
   return (
     <div className="leaderboard-container">
-      <div className='navbar-in-comp'><Navbar/></div>
+      <div className="navbar-wrapper">
+          <Navbar />
+        </div>
       <h1 className="leaderboard-header">Leaderboard</h1>
       
       <div className="filters">

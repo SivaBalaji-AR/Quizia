@@ -55,13 +55,11 @@
   aspect-ratio: 3 / 4; /* Maintain a 3:4 aspect ratio */
 }
 
-
 /* Quiz card hover effect */
 .quiz-card:hover {
   box-shadow: rgba(0, 0, 0, 0.2) 0 10px 20px;
   transform: translateY(-5px);
 }
-
 
 /* Quiz card image */
 .quiz-card-image {
@@ -114,8 +112,7 @@
   background: #218838;
 }
 
-
-/* Responsive design for grids */
+/* Responsive design for larger screens */
 @media (max-width: 1200px) {
   .quiz-grid-container {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -128,8 +125,70 @@
   }
 }
 
+/* Responsive design for mobile screens */
 @media (max-width: 600px) {
   .quiz-grid-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column layout on small screens */
+    padding: 0 0.5rem; /* Reduce padding */
+    gap: 1rem; /* Decrease gap between cards */
+  }
+
+  .quiz-page-title {
+    font-size: 1.8rem; /* Smaller title for mobile */
+    padding: 0.5rem; /* Reduce padding around title */
+  }
+
+  .quiz-card {
+    padding: 0.8rem; /* Decrease padding inside cards */
+    border-radius: 0.375rem; /* Slightly smaller border radius */
+    max-width: 100%; /* Allow card to take full width */
+    aspect-ratio: auto; /* Remove fixed aspect ratio */
+  }
+
+  .quiz-card-title {
+    font-size: 1.25rem; /* Slightly smaller title */
+  }
+
+  .quiz-card-description {
+    font-size: 0.9rem; /* Slightly smaller description */
+  }
+
+  .quiz-card-button {
+    padding: 8px 16px; /* Smaller button padding */
+    font-size: 0.9rem; /* Smaller button text */
+  }
+
+  .quiz-card-image {
+    border-radius: 0.25rem; /* Slightly smaller image border radius */
+  }
+}
+
+/* Further adjustments for extra small screens */
+@media (max-width: 480px) {
+  .quiz-page-title {
+    font-size: 1.5rem; /* Smaller title for extra small screens */
+    padding: 0.5rem 0.2rem; /* Less padding */
+  }
+
+  .quiz-card {
+    padding: 0.5rem; /* Further reduce padding */
+    border-radius: 0.25rem; /* Smaller border radius */
+  }
+
+  .quiz-card-title {
+    font-size: 1rem; /* Further smaller title */
+  }
+
+  .quiz-card-description {
+    font-size: 0.8rem; /* Smaller description */
+  }
+
+  .quiz-card-button {
+    padding: 6px 12px; /* Further smaller button padding */
+    font-size: 0.8rem; /* Smaller button text */
+  }
+
+  .quiz-card-image {
+    border-radius: 0.2rem; /* Smaller image border radius */
   }
 }

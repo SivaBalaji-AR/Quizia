@@ -164,3 +164,101 @@
     margin: 0 10px;
   }
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Adjust container padding for smaller screens */
+  .total {
+    padding: 15px;
+  }
+
+  /* Adjust the width of the BigDiv container */
+  .BigDiv {
+    width: 90%;
+    padding: 15px;
+  }
+
+  /* Reduce header and subheader font size */
+  .quiz-header {
+    font-size: 1.5rem;
+  }
+
+  .quiz-subheader {
+    font-size: 1rem;
+  }
+
+  /* Adjust padding in BigDiv01 for smaller screens */
+  .BigDiv01 {
+    padding: 20px;
+  }
+
+  /* Set the quiz options to take full width */
+  .BigDiv02 {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .BigDiv0201 {
+    width: 100%;
+    min-width: unset;
+    height: 10vh;
+    margin-bottom: 10px;
+  }
+
+  .BigDiv020101 {
+    padding: 5px;
+    font-size: 1rem;
+  }
+
+  /* Adjust button size and padding */
+  .button-next {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  /* Reduce padding further for very small screens */
+  .total {
+    padding: 10px;
+  }
+
+  /* Reduce font size on very small screens */
+  .quiz-header {
+    font-size: 1.25rem;
+  }
+
+  .quiz-subheader {
+    font-size: 0.875rem;
+  }
+
+  /* Adjust BigDiv padding and margin for small screens */
+  .BigDiv {
+    padding: 10px;
+  }
+
+  .BigDiv01 {
+    padding: 15px;
+  }
+
+  /* Adjust quiz options for smaller screens */
+  .BigDiv02 {
+    padding: 5px;
+  }
+
+  .BigDiv0201 {
+    height: 8vh;
+  }
+
+  /* Adjust font size in the options */
+  .BigDiv020101 {
+    font-size: 0.875rem;
+  }
+
+  /* Adjust button size and padding for small screens */
+  .button-next {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}

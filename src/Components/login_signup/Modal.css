@@ -27,4 +27,8 @@
     right: 10px;
     cursor: pointer;
   }
-  
+  @media (max-width: 768px) {
+    .modal{
+      width:auto;
+    }
+  }

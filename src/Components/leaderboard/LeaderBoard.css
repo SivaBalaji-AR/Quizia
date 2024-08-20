@@ -1,5 +1,3 @@
-/* LeaderBoard.css */
-
 .leaderboard-container {
   padding: 20px;
   font-family: 'Poppins', sans-serif;
@@ -43,7 +41,8 @@
 }
 
 .table {
-  width: 80%;
+  width: 100%; /* Make table width 100% to fit the container */
+  max-width: 100%; /* Ensure table does not exceed the width of its container */
   border-collapse: collapse;
   margin: 0 auto;
   border: 1px solid #ddd;
@@ -51,6 +50,7 @@
   border-radius: 8px;
   overflow: hidden;
   background-color: #f9f9f9;
+  table-layout: fixed; /* Fix table layout to prevent overflow */
 }
 
 .table thead {
@@ -58,9 +58,9 @@
 }
 
 .table thead th {
-  background-color: #090089;
   border-bottom: 2px solid #ddd;
   padding: 12px;
+  background-color: #090089;
   text-align: center;
   color: #fff;
 }
@@ -68,8 +68,9 @@
 .table tbody td {
   border-bottom: 1px solid #ddd;
   padding: 12px;
-  color:#34495e;
-  background-color:#c2e9fb ; /* White background for rows */
+  color: #34495e;
+  background-color: #c2e9fb; /* Background color for rows */
+  word-wrap: break-word; /* Ensure long words break to fit cell */
 }
 
 .table tbody tr:nth-child(even) {
@@ -84,9 +85,12 @@
   text-align: center; /* Center-align text in table cells */
 }
 
-.navbar-in-comp{
-  margin-left: 37%;
+.navbar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the Navbar */
 }
+
 @media (max-width: 768px) {
   .filters {
     flex-direction: column; /* Stack filters on smaller screens */
@@ -96,9 +100,7 @@
     width: 100%;
     margin-bottom: 10px;
   }
-  .navbar-in-comp{
-    margin-left: 30%;
-  }
+
   .filter select {
     width: 100%;
   }

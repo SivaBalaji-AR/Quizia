@@ -46,7 +46,9 @@ const ProfilePage = () => {
   return (
     <div className='total-profile'>
     <div className="profile-page-container">
-    <div style={{marginLeft:"37%"}}><Navbar/></div>
+    <div className="navbar-wrapper">
+          <Navbar />
+        </div>
       <h1 className="profile-header">User Profile</h1>
 
       <div className="user-details">
