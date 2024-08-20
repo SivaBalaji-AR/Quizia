@@ -76,7 +76,7 @@ const HomeComponent = () => {
         </nav>
 
         <div className='home-content'>
-          <h1>Welcome to the Quiz Master!</h1>
+          <h1>Welcome to the Quizia!</h1>
           <p>Challenge yourself with our quizzes and enhance your knowledge. Let's make learning fun!</p>
         </div>
 
