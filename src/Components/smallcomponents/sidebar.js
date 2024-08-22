@@ -16,7 +16,7 @@ const iconMap = {
 const Sidebar = () => {
     const { setQuizTopic } = useContext(QuizContext);
     const navigate = useNavigate();
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const [quizTopics, setQuizTopics] = useState([]);
 
     useEffect(() => {
